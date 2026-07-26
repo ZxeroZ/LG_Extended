@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission" />
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LG_Extended">
+        <provider
+            android:name=".prefs.ModPrefs"
+            android:authorities="com.zxerox.lg_extended.prefs"
+            android:exported="true" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name="com.zxerox.lg_extended.ui.BatteryStyleActivity" android:exported="false" />
+
+
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="82" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="LG Extended - Suite de mods para LG V60" />
+
+        <activity
+            android:name=".ui.IosStyleActivity"
+            android:exported="false" />
+
+        <activity android:name=".ui.DpiActivity"
+            android:exported="false"/>
+
+        <activity android:name=".ui.BypassActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
