@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.android.launcher3.BubbleTextView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:textColor="@color/white_color"
-    android:focusable="true"
-    android:textDirection="locale"
-    android:defaultFocusHighlightEnabled="false"
-    app:adaptiveColor="false"
-    app:layoutHorizontal="true"
-    style="@style/Icon"/>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.lge.launcher3.wing.SwivelAppIconView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto"
-    android:focusable="true"
-    android:clickable="true"
-    android:layout_width="@dimen/swivel_app_icon_bg_width"
-    android:layout_height="@dimen/swivel_app_icon_frame_height"
-    android:defaultFocusHighlightEnabled="false"/>

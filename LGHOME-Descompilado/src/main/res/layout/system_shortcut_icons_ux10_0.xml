@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:id="@+id/system_shortcut_icons"
-    android:background="@color/app_shortcut_background_color"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/system_shortcut_header_height_ux10_0"
-    android:paddingStart="@dimen/system_shortcut_header_padding_ux10_0"
-    android:paddingEnd="@dimen/system_shortcut_header_padding_ux10_0"/>
