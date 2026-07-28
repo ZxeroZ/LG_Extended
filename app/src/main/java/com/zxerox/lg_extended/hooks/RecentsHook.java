@@ -16,7 +16,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
 public class RecentsHook {
 
-    private static final float STACK_GAP = 200f;
+    private static final float STACK_GAP = 160f;
     private static final Map<View, Float> lastScaleMap = new WeakHashMap<>();
 
     public void hook(final LoadPackageParam lpparam) throws Throwable {
@@ -24,26 +24,29 @@ public class RecentsHook {
             return;
         }
 
-        hookSilently(lpparam.classLoader, "com.android.quickstep.views.TaskView", "setFullscreenProgress", float.class, new XC_MethodHook() {
+        // Corner Radius
+        hookSilently(lpparam.classLoader, "com.android.quickstep.util.TaskCornerRadius", "get", android.content.Context.class, new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) {
+                android.content.Context ctx = (android.content.Context) param.args[0];
+                float density = ctx.getResources().getDisplayMetrics().density;
+                param.setResult(26f * density); // More rounded corners
+            }
+        });
+
+        hookSilently(lpparam.classLoader, "com.android.quickstep.views.TaskView", "setFullscreenProgress", float.class, new XC_MethodHook() {
+            @Override
+            protected void afterHookedMethod(MethodHookParam param) {
                 float original = (float) param.args[0];
                 View view = (View) param.thisObject;
 
-                if (original < 0.5f) {
-                    param.args[0] = 0.0f;
-                } else {
-                    float t = (original - 0.5f) / 0.5f;
-                    if (t < 0f) t = 0f;
-                    if (t > 1f) t = 1f;
+                Float baseScale = lastScaleMap.get(view);
+                float from = (baseScale != null) ? baseScale : 1.0f;
+                // Soft interpolation
+                float interpolated = from + (1.0f - from) * original;
 
-                    Float baseScale = lastScaleMap.get(view);
-                    float from = (baseScale != null) ? baseScale : 1.0f;
-                    float interpolated = from + (1.0f - from) * t;
-
-                    view.setScaleX(interpolated);
-                    view.setScaleY(interpolated);
-                }
+                view.setScaleX(interpolated);
+                view.setScaleY(interpolated);
             }
         });
 
@@ -91,7 +94,7 @@ public class RecentsHook {
                 }
                 if (nativeSpacing <= 0) nativeSpacing = width;
 
-                float stackGapAhead = nativeSpacing * 0.7f;
+                float stackGapAhead = nativeSpacing * 0.65f;
                 float screenCenter = scrollX + (width / 2f);
 
                 List<View> taskViews = new ArrayList<>();
@@ -126,16 +129,14 @@ public class RecentsHook {
                         child.setTranslationX(0f);
                     }
 
-                    // ESCALA
                     int rank = rankMap.getOrDefault(child, 0);
                     float scale;
-                    if (rank <= 4) {
+                    if (rank <= 3) {
                         scale = 1.0f - (rank * 0.01f);
                     } else {
-                        float baseScale = 1.0f - (4 * 0.01f);
-                        scale = baseScale - ((rank - 4) * 0.005f);
+                        scale = 1.0f - (3 * 0.01f); // Mantener escala fija después de la 3ra tarjeta
                     }
-                    scale = Math.max(0.60f, scale);
+                    scale = Math.max(0.70f, scale);
                     child.setScaleX(scale);
                     child.setScaleY(scale);
                     child.setTranslationZ(child.getLeft() * 0.01f);
@@ -143,7 +144,13 @@ public class RecentsHook {
                     try {
                         ViewGroup headerView = (ViewGroup) XposedHelpers.getObjectField(child, "mHeaderView");
                         if (headerView != null) {
-                            float titleAlpha = Math.max(0.0f, 1.0f - (Math.abs(progress) * 0.75f));
+                            // Fades out much faster so only the focused card (progress ~ 0) shows the title
+                            float titleAlpha = Math.max(0.0f, 1.0f - (Math.abs(progress) * 2.5f));
+                            
+                            headerView.setScaleX(0.85f);
+                            headerView.setScaleY(0.85f);
+                            headerView.setTranslationY(15f);
+                            
                             for (int j = 0; j < headerView.getChildCount(); j++) {
                                 View hChild = headerView.getChildAt(j);
                                 if (hChild instanceof TextView) {

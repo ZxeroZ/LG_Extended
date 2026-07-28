@@ -20,8 +20,18 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("release-key.jks")
+            storePassword "password"
+            keyAlias "my-alias"
+            keyPassword "password"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             optimization {
                 enable false
             }

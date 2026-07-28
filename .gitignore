@@ -13,3 +13,14 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Archivos temporales y descompilados del proyecto
+/LGHOME-Descompilado/
+/app-descompilada/
+/xml icons/
+/iconos_ajustes_oneui_muted/
+*.txt
+*.patch
+*.jks
+CropImage.*
+test.java
