@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lge.launcher3.droptarget.LGSearchDropTargetBar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:focusable="false"
+    android:visibility="invisible"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/drag_target_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout style="@style/DropTargetButtonContainer">
+            <com.android.launcher3.DeleteDropTarget
+                android:id="@+id/delete_target_text"
+                android:text="@string/delete_target_label"
+                style="@style/DropTargetButton"/>
+        </FrameLayout>
+        <FrameLayout style="@style/DropTargetButtonContainer">
+            <com.lge.launcher3.droptarget.LGUninstallDropTarget
+                android:id="@+id/uninstall_target_text"
+                android:text="@string/delete_target_delete_label"
+                style="@style/DropTargetButton"/>
+        </FrameLayout>
+        <FrameLayout style="@style/DropTargetButtonContainer">
+            <com.lge.launcher3.droptarget.CancelDropTarget
+                android:id="@+id/cancel_target_text"
+                android:text="@string/cancel_target_label"
+                style="@style/DropTargetButton"/>
+        </FrameLayout>
+        <FrameLayout style="@style/DropTargetButtonContainer">
+            <com.lge.launcher3.droptarget.DisableDropTarget
+                android:id="@+id/disable_target_text"
+                android:text="@string/disable_target_label"
+                style="@style/DropTargetButton"/>
+        </FrameLayout>
+        <LinearLayout style="@style/DropTargetButtonContainer">
+            <com.lge.launcher3.droptarget.LGUninstallDropTarget
+                android:id="@+id/all_apps_uninstall_target_text"
+                android:layout_marginRight="@dimen/all_apps_delete_layout_center_padding"
+                android:text="@string/delete_target_delete_label"
+                android:layout_weight="1"
+                style="@style/DropTargetButton"/>
+            <com.lge.launcher3.droptarget.DisableDropTarget
+                android:id="@+id/all_apps_disable_target_text"
+                android:layout_marginRight="@dimen/all_apps_delete_layout_center_padding"
+                android:text="@string/disable_target_label"
+                android:layout_weight="1"
+                style="@style/DropTargetButton"/>
+            <com.android.launcher3.DeleteDropTarget
+                android:id="@+id/all_apps_delete_target_text"
+                android:text="@string/delete_target_label"
+                android:layout_weight="1"
+                style="@style/DropTargetButton"/>
+        </LinearLayout>
+    </FrameLayout>
+</com.lge.launcher3.droptarget.LGSearchDropTargetBar>

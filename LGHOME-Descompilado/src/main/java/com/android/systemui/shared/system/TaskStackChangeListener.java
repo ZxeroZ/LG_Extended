@@ -1,0 +1,87 @@
+package com.android.systemui.shared.system;
+
+import android.app.ActivityManager;
+import android.content.ComponentName;
+import com.android.systemui.shared.recents.model.ThumbnailData;
+
+/* JADX INFO: loaded from: classes.dex */
+public interface TaskStackChangeListener {
+    default void onActivityDismissingDockedStack() {
+    }
+
+    default void onActivityForcedResizable(String str, int i, int i2) {
+    }
+
+    default void onActivityLaunchOnSecondaryDisplayFailed() {
+    }
+
+    default void onActivityLaunchOnSecondaryDisplayRerouted() {
+    }
+
+    default void onActivityPinned(String str, int i, int i2, int i3) {
+    }
+
+    default void onActivityRequestedOrientationChanged(int i, int i2) {
+    }
+
+    default void onActivityRestartAttempt(ActivityManager.RunningTaskInfo runningTaskInfo, boolean z, boolean z2, boolean z3) {
+    }
+
+    default void onActivityRotation(int i) {
+    }
+
+    default void onActivityUnpinned() {
+    }
+
+    default void onBackPressedOnTaskRoot(ActivityManager.RunningTaskInfo runningTaskInfo) {
+    }
+
+    default void onLockTaskModeChanged(int i) {
+    }
+
+    default void onRecentTaskListFrozenChanged(boolean z) {
+    }
+
+    default void onRecentTaskListUpdated() {
+    }
+
+    default void onTaskCreated(int i, ComponentName componentName) {
+    }
+
+    default void onTaskDescriptionChanged(ActivityManager.RunningTaskInfo runningTaskInfo) {
+    }
+
+    default void onTaskDisplayChanged(int i, int i2) {
+    }
+
+    default void onTaskMovedToFront(int i) {
+    }
+
+    default void onTaskProfileLocked(ActivityManager.RunningTaskInfo runningTaskInfo) {
+    }
+
+    default void onTaskRemoved(int i) {
+    }
+
+    default boolean onTaskSnapshotChanged(int i, ThumbnailData thumbnailData) {
+        return false;
+    }
+
+    default void onTaskStackChanged() {
+    }
+
+    default void onTaskStackChangedBackground() {
+    }
+
+    default void onActivityLaunchOnSecondaryDisplayFailed(ActivityManager.RunningTaskInfo runningTaskInfo) {
+        onActivityLaunchOnSecondaryDisplayFailed();
+    }
+
+    default void onActivityLaunchOnSecondaryDisplayRerouted(ActivityManager.RunningTaskInfo runningTaskInfo) {
+        onActivityLaunchOnSecondaryDisplayRerouted();
+    }
+
+    default void onTaskMovedToFront(ActivityManager.RunningTaskInfo runningTaskInfo) {
+        onTaskMovedToFront(runningTaskInfo.taskId);
+    }
+}

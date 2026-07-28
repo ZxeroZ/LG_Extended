@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lge.launcher3.pageindicator.PageIndicatorMarkerExtension xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/inactive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pageindicator_default"
+        android:scaleType="centerInside"/>
+    <ImageView
+        android:id="@+id/active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pageindicator_current"
+        android:scaleType="centerInside"
+        android:alpha="0"
+        android:scaleX="0.5"
+        android:scaleY="0.5"/>
+</com.lge.launcher3.pageindicator.PageIndicatorMarkerExtension>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.notification.NotificationFooterLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_vertical"
+    android:background="@color/popup_background_color"
+    android:clipChildren="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="@dimen/notification_elevation">
+    <View
+        android:layout_gravity="top"
+        android:id="@+id/divider"
+        android:background="@color/deep_shortcut_divider_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/popup_item_divider_height_ux10_0"
+        android:layout_marginStart="@dimen/notification_padding_ux10_0"
+        android:layout_marginEnd="@dimen/notification_main_text_padding_end_swivel"/>
+    <LinearLayout
+        android:gravity="start|center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/icon_row"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/popup_item_divider_height_ux10_0"
+        android:layout_marginStart="@dimen/notification_footer_icon_margin_start_ux10_0"/>
+    <View
+        android:layout_gravity="end|center_vertical"
+        android:id="@+id/overflow"
+        android:background="@drawable/horizontal_ellipsis"
+        android:layout_width="@dimen/horizontal_ellipsis_size"
+        android:layout_height="@dimen/horizontal_ellipsis_size"
+        android:layout_marginTop="@dimen/popup_item_divider_height_ux10_0"
+        android:layout_marginEnd="@dimen/notification_footer_overflow_margin_end"/>
+</com.android.launcher3.notification.NotificationFooterLayout>

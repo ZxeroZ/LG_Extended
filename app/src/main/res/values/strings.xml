@@ -1,3 +1,80 @@
 <resources>
-    <string name="app_name">LG_Extended</string>
+    <string name="app_name">LG Extended</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_hooks">Hooks</string>
+    <string name="nav_logs">Logs</string>
+    <string name="nav_settings">Ajustes</string>
+
+    <!-- Home Tab -->
+    <string name="home_tagline">"Stock is a suggestion"</string>
+    <string name="home_author">by ZxeroZ</string>
+    <string name="device_info_title">Device Info</string>
+    <string name="status_title">Status</string>
+    <string name="module_info_title">Module Info</string>
+    <string name="lsposed_active">LSPosed Active</string>
+    <string name="lsposed_inactive">LSPosed Inactive</string>
+    <string name="root_granted">Root Granted</string>
+    <string name="root_denied">Root Denied</string>
+    <string name="root_solution">Root Solution</string>
+    <string name="module_version">Version 1.0</string>
+    <string name="module_scope">Scope: SystemUI, Launcher</string>
+    <string name="checking_status">Checking…</string>
+
+    <!-- Hooks Tab -->
+    <string name="hooks_title">Hooks</string>
+    <string name="hooks_subtitle">Manage all active hooks</string>
+    <string name="battery_style_title">Battery Style</string>
+    <string name="battery_style_desc">Customize battery icon view</string>
+    <string name="ios_style_title">iOS Style</string>
+    <string name="ios_style_desc">iOS-style multitasking</string>
+    <string name="dpi_scale_title">DPI Scale</string>
+    <string name="dpi_scale_desc">Change display density</string>
+    <string name="security_bypass_title">Security Bypass</string>
+    <string name="security_bypass_desc">Bypass system restrictions</string>
+    <string name="restart_system_ui">Restart System UI</string>
+
+    <!-- Placeholder -->
+    <string name="coming_soon">Coming Soon</string>
+    <string name="coming_soon_desc">This section is under development</string>
+
+    <!-- Battery Style -->
+    <string name="battery_style_heading">Battery Style</string>
+    <string name="battery_style_subheading">Customize your battery icon</string>
+    <string name="custom_colors">Custom Colors</string>
+    <string name="custom_colors_desc">Change colors for every state</string>
+    <string name="go_back">Go Back</string>
+
+    <!-- iOS Style -->
+    <string name="ios_style_heading">iOS Style</string>
+    <string name="ios_style_description">Implements the \'recents\' stack style, also known as iOS multitasking.</string>
+    <string name="bugs_known">Bugs known:</string>
+    <string name="bug_scaling">• Scaling effect when using Quick Switch (Minor)</string>
+    <string name="enable_module">Enable Module</string>
+
+    <!-- DPI -->
+    <string name="dpi_heading">DPI Changer</string>
+    <string name="dpi_subheading">Change the DPI of compatible apps</string>
+
+    <!-- Bypass -->
+    <string name="bypass_heading">Bypassing</string>
+    <string name="flag_secure_title">FLAG_SECURE</string>
+    <string name="flag_secure_desc">Disables the Android FLAG_SECURE that prevents taking screenshots in apps that invoke it.</string>
+    <string name="more_mods_coming">More mods coming soon.</string>
+
+    <!-- Color Picker -->
+    <string name="customize_colors">Customize Colors</string>
+    <string name="normal_state">NORMAL STATE</string>
+    <string name="charging_state">CHARGING STATE</string>
+    <string name="low_battery_state">LOW BATTERY STATE</string>
+    <string name="background_color">Background Color</string>
+    <string name="icon_text_color">Icon / Text Color</string>
+
+    <!-- DPI Dialog -->
+    <string name="configure_dpi">Configure DPI</string>
+    <string name="dpi_dialog_hint">e.g. 420</string>
+    <string name="dpi_warning">⚠ This app must be enabled in LSPosed\'s module scope for the change to take effect.</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

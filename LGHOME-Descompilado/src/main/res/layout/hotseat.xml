@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.Hotseat xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto">
+    <com.android.launcher3.CellLayout
+        android:layout_gravity="center"
+        android:id="@+id/layout"
+        android:paddingLeft="@dimen/hotseat_padding_left"
+        android:paddingRight="@dimen/hotseat_padding_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</com.android.launcher3.Hotseat>

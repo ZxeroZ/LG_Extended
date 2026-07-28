@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:ordering="together">
+    <objectAnimator
+        android:interpolator="@drawable/_assistant_gesture__55_res_0x7f080033"
+        android:duration="333"
+        android:startOffset="0"
+        android:valueFrom="-10"
+        android:valueTo="-10"
+        android:valueType="floatType"
+        android:propertyName="rotation"/>
+    <objectAnimator
+        android:interpolator="@drawable/_assistant_gesture__56_res_0x7f080034"
+        android:duration="900"
+        android:startOffset="333"
+        android:valueFrom="-10"
+        android:valueTo="0"
+        android:valueType="floatType"
+        android:propertyName="rotation"/>
+    <objectAnimator
+        android:interpolator="@drawable/_assistant_gesture__57_res_0x7f080035"
+        android:duration="450"
+        android:startOffset="1233"
+        android:valueFrom="0"
+        android:valueTo="0"
+        android:valueType="floatType"
+        android:propertyName="rotation"/>
+    <objectAnimator
+        android:interpolator="@drawable/_assistant_gesture__58_res_0x7f080036"
+        android:duration="1400"
+        android:startOffset="1683"
+        android:valueFrom="0"
+        android:valueTo="-10"
+        android:valueType="floatType"
+        android:propertyName="rotation"/>
+</set>

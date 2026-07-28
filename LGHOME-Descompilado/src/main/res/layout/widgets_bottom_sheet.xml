@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.widget.WidgetsBottomSheet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    android:background="?android:attr/colorPrimary"
+    android:paddingTop="26dp"
+    android:paddingBottom="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/deep_shortcuts_elevation">
+    <TextView
+        android:textSize="0x20c0197"
+        android:textColor="@color/bottomup_widget_text_color"
+        android:gravity="center_horizontal"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="0x20c036f"
+        android:textColor="@color/bottomup_widget_desc_text_color"
+        android:gravity="center_horizontal"
+        android:paddingTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/touch_widget_to_add"/>
+    <include
+        android:id="@+id/widgets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        layout="@layout/widgets_scroll_container"/>
+</com.android.launcher3.widget.WidgetsBottomSheet>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <!-- HEADER -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/color_text_primary"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:letterSpacing="-0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_tagline"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_author"
+            android:textColor="@color/color_text_tertiary"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp" />
+
+        <!-- DEVICE INFO CARD -->
+        <LinearLayout
+            android:id="@+id/deviceInfoCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_light"
+            android:padding="20dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_info_title"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Model"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/deviceModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checking_status"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Android"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/androidVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checking_status"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Kernel"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/kernelVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checking_status"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:maxWidth="200dp"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Arch"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/deviceArch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checking_status"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- STATUS CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_light"
+            android:padding="20dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_title"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp" />
+
+            <!-- LSPosed -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LSPosed"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/lsposedDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checking_status"
+                    android:textColor="@color/color_success"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_badge_green"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp" />
+            </LinearLayout>
+
+            <!-- Root -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Root"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/rootDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checking_status"
+                    android:textColor="@color/color_success"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_badge_green"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp" />
+            </LinearLayout>
+
+            <!-- Magisk -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/root_solution"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/magiskDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checking_status"
+                    android:textColor="@color/color_accent"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_badge_blue"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- MODULE INFO CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_light"
+            android:padding="20dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/module_info_title"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/module_version"
+                android:textColor="@color/color_text_primary"
+                android:textSize="15sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/module_scope"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+    </LinearLayout>
+</ScrollView>

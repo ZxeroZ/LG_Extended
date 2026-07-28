@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="additional_screen">
+        <item>@string/vzw_sidescreen_name</item>
+        <item>@string/google_feed</item>
+        <item>@string/smartbulletin</item>
+        <item>@string/sp_none_home_NORMAL</item>
+    </array>
+    <array name="config_dynamic_grid_preset">
+        <item>4x4</item>
+        <item>4x5</item>
+        <item>4x6</item>
+        <item>5x5</item>
+        <item>5x6</item>
+    </array>
+    <array name="config_feature_default_theme">
+        <item>com.lge.launcher2.theme.optimus</item>
+    </array>
+    <array name="config_initial_guide_custom_pagelist">
+    </array>
+    <array name="config_multi_window_guide_custom_pagelist">
+    </array>
+    <array name="config_restore_filtering_actions">
+        <item>com.android.contacts.action.SHORTCUT_CONTACT</item>
+        <item>android.provider.action.QUICK_CONTACT</item>
+    </array>
+    <array name="config_swivel_home_guide_main_custom_pagelist">
+    </array>
+    <array name="config_swivel_home_guide_sub_custom_pagelist">
+    </array>
+    <array name="data_popup_packages_tlf">
+        <item>com.android.browser</item>
+        <item>com.android.email</item>
+        <item>com.lge.lgworld</item>
+        <item>com.google.android.gm</item>
+        <item>com.google.android.googlequicksearchbox</item>
+        <item>com.google.android.apps.maps</item>
+        <item>com.android.vending</item>
+        <item>com.google.android.apps.genie.geniewidget</item>
+        <item>com.google.android.talk</item>
+        <item>com.google.android.voicesearch</item>
+        <item>com.google.android.youtube</item>
+        <item>com.lge.tlfurl</item>
+        <item>es.telefonica.android.mstore</item>
+        <item>com.google.android.apps.plus</item>
+        <item>com.rsupport.rs.activity.lge</item>
+        <item>com.android.chrome</item>
+        <item>com.lge.telefonica.sports</item>
+        <item>com.lge.telefonica.emotion</item>
+        <item>com.lge.telefonica.musiclink</item>
+        <item>com.lge.telefonica.gamelink</item>
+        <item>com.herocraft.game.farmfrenzy.telefonica</item>
+        <item>com.gameloft.android.GloftPSHF</item>
+        <item>com.gameloft.android.GloftLCEF</item>
+        <item>imagenio.movil.tv</item>
+        <item>com.movistar.android.mimovistar.es</item>
+        <item>com.tuenti.messenger</item>
+        <item>com.google.android.play.games</item>
+        <item>com.lge.sizechangable.weather</item>
+        <item>com.movistar.recomienda</item>
+        <item>com.dhr.spotify.launcher</item>
+        <item>com.lge.ims.rcsim</item>
+        <item>com.lge.email</item>
+        <item>com.evernote</item>
+        <item>com.jvnewco.yaapmoney</item>
+        <item>com.yaap.yaapshopping</item>
+        <item>com.gameloft.android.GloftGF2H</item>
+        <item>com.herocraft.game.birdsonwire.telefonica</item>
+        <item>com.herocraft.game.wonderwood</item>
+    </array>
+    <array name="data_popup_packages_vdf">
+        <item>com.android.browser</item>
+        <item>com.android.chrome</item>
+        <item>com.vodafone.android.myweb.launcher</item>
+        <item>com.google.android.googlequicksearchbox</item>
+    </array>
+    <array name="dynamic_resources">
+        <item>@dimen/all_apps_spring_damping_ratio</item>
+        <item>@dimen/all_apps_spring_stiffness</item>
+        <item>@dimen/dismiss_task_trans_y_damping_ratio</item>
+        <item>@dimen/dismiss_task_trans_y_stiffness</item>
+        <item>@dimen/dismiss_task_trans_x_damping_ratio</item>
+        <item>@dimen/dismiss_task_trans_x_stiffness</item>
+        <item>@dimen/horizontal_spring_damping_ratio</item>
+        <item>@dimen/horizontal_spring_stiffness</item>
+        <item>@dimen/swipe_up_rect_scale_damping_ratio</item>
+        <item>@dimen/swipe_up_rect_scale_stiffness</item>
+        <item>@dimen/swipe_up_rect_xy_fling_friction</item>
+        <item>@dimen/swipe_up_rect_xy_damping_ratio</item>
+        <item>@dimen/swipe_up_rect_xy_stiffness</item>
+        <item>@dimen/staggered_damping_ratio</item>
+        <item>@dimen/staggered_stiffness</item>
+        <item>@dimen/unlock_staggered_velocity_dp_per_s</item>
+        <item>@dimen/swipe_up_fling_min_visible_change</item>
+        <item>@dimen/swipe_up_y_overshoot</item>
+        <item>@dimen/hint_scale_damping_ratio</item>
+        <item>@dimen/hint_scale_stiffness</item>
+        <item>@dimen/hint_scale_velocity_dp_per_s</item>
+    </array>
+    <array name="exclude_noti_badge_and_popup">
+        <item>com.android.contacts.activities.PeopleActivity</item>
+    </array>
+    <array name="exclude_swipe_up_down">
+        <item>com.lge.sizechangable.weather</item>
+        <item>com.lge.qmemoplus</item>
+    </array>
+    <array name="extra_wallpapers">
+    </array>
+    <array name="folder_cell_width_scale_by_display_size">
+        <item>0.827</item>
+        <item>0.8</item>
+        <item>0.7125</item>
+    </array>
+    <array name="gesture_blocking_activities">
+        <item>com.android.launcher3/com.android.quickstep.interaction.GestureSandboxActivity</item>
+    </array>
+    <array name="icon_shape_override_paths_names">
+        <item>@string/icon_shape_system_default</item>
+        <item>@string/icon_shape_square</item>
+        <item>@string/icon_shape_squircle</item>
+        <item>@string/icon_shape_circle</item>
+        <item>@string/icon_shape_teardrop</item>
+    </array>
+    <array name="icon_shape_override_paths_values">
+        <item />
+        <item>M50,0L100,0 100,100 0,100 0,0z</item>
+        <item>M50,0 C10,0 0,10 0,50 0,90 10,100 50,100 90,100 100,90 100,50 100,10 90,0 50,0 Z</item>
+        <item>M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0</item>
+        <item>M50,0A50,50,0,0 1 100,50 L100,85 A15,15,0,0 1 85,100 L50,100 A50,50,0,0 1 50,0z</item>
+    </array>
+    <array name="icon_shapes">
+        <item>@string/icon_shape_original</item>
+        <item>@string/icon_shape_rounded_square</item>
+        <item>@string/icon_shape_round</item>
+        <item>@string/icon_shape_cylinder</item>
+        <item>@string/icon_shape_square</item>
+        <item>@string/icon_shape_circle</item>
+    </array>
+    <array name="icon_shapes_new">
+        <item>@string/icon_shape_original</item>
+        <item>@string/icon_shape_rounded_square</item>
+        <item>@string/icon_shape_round</item>
+        <item>@string/icon_shape_cylinder</item>
+    </array>
+    <array name="include_valid_package">
+        <item>com.android.stk</item>
+        <item>com.google.android.apps.wellbeing</item>
+    </array>
+    <array name="letter_box_color">
+        <item>black</item>
+        <item>white</item>
+    </array>
+    <array name="lg_exclude_apps">
+    </array>
+    <array name="lg_exclude_apps_device_owner">
+        <item>com.lge.launcher3/com.lge.launcher3.recentuninstall.RUActivity</item>
+    </array>
+    <array name="lg_folder_color_list">
+        <item>@string/sp_talk_back_white_btn</item>
+        <item>@string/sp_blue_NORMAL</item>
+        <item>@string/sp_lgfolder_color_skyblue_NORMAL</item>
+        <item>@string/sp_vutalk_talk_back_ivory_button</item>
+        <item>@string/sp_talk_back_blue_violet_btn</item>
+        <item>@string/sp_lgfolder_color_orange_NORMAL</item>
+        <item>@string/sp_pale_pink_NORMAL</item>
+        <item>@string/sp_lgfolder_color_green_NORMAL</item>
+        <item>@string/sp_lgfolder_color_beige_NORMAL</item>
+        <item>@string/sp_lgfolder_color_pink_NORMAL</item>
+        <item>@string/sp_talk_back_dark_blue_btn</item>
+        <item>@string/sp_lgfolder_color_gray_NORMAL</item>
+        <item>@string/sp_lgfolder_color_light_green_NORMAL</item>
+        <item>@string/sp_custom_color_NORMAL</item>
+    </array>
+    <array name="live_wallpapers_remove_sysui_scrims">
+    </array>
+    <array name="operator_wallpapers">
+    </array>
+    <array name="screen_effect">
+        <item>@string/menu_screen_effect_basic</item>
+        <item>@string/menu_screen_effect_breeze</item>
+        <item>@string/menu_screen_effect_panorama</item>
+        <item>@string/menu_screen_effect_carousel</item>
+    </array>
+    <array name="silent_ota_packages">
+    </array>
+    <array name="skip_remove_task_packages">
+        <item>jp.co.nttdocomo.anshinmode</item>
+        <item>jp.softbank.mb.parentalcontrols</item>
+    </array>
+    <array name="vpl_apps">
+        <item>com.synchronoss.dcs.att.r2g</item>
+        <item>com.att.android.attsmartwifi</item>
+        <item>com.locationlabs.cni.att</item>
+    </array>
+    <array name="wallpaper_order_apps">
+        <item>com.lge.launcher3</item>
+        <item>com.android.gallery3d</item>
+        <item>com.android.wallpaper.livepicker</item>
+        <item>com.google.android.apps.photos</item>
+    </array>
+    <array name="widget_blur_apps">
+    </array>
+    <array name="workspaceca">
+    </array>
+</resources>

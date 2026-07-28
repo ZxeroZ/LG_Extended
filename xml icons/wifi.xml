@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+
+    <!-- Fondo circular azul claro -->
+    <path android:fillColor="#1874FF" android:pathData="M12,12m-11,0a11,11 0,1 1,22 0a11,11 0,1 1,-22 0" />
+
+    <!-- Ícono de Wi-Fi centrado y escalado -->
+    <group android:scaleX="0.55" android:scaleY="0.55" android:pivotX="12" android:pivotY="12">
+        <path android:fillColor="#FFFFFF" android:pathData="M1 9l2 2.31 9 10.69 9-10.69L23 9C22.61 8.68 18.06 5 12 5S1.39 8.68 1 9z" />
+    </group>
+</vector>

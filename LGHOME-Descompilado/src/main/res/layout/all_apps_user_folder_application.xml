@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.BubbleTextView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res/com.lge.launcher3"
+    android:ellipsize="end"
+    android:gravity="center_horizontal"
+    android:id="@+id/lg_menu_folder_application"
+    android:background="@drawable/app_icon_bg"
+    android:paddingTop="@dimen/lg_folder_application_padding_top"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:maxLines="2"
+    android:singleLine="false"
+    android:drawablePadding="@dimen/lg_openfolder_icon_drawable_padding"
+    launcher:blurColor="#ff6b8cf0"
+    launcher:outlineColor="#ff8cd2ff"
+    style="@style/homescreen_folder_contents"/>

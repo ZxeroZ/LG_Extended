@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.quickstep.views.TaskMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground"
+    android:paddingTop="@dimen/overview_popup_top_padding"
+    android:paddingBottom="@dimen/overview_popup_bottom_padding"
+    android:visibility="invisible"
+    android:layout_width="@dimen/bg_popup_item_width"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="54dp"
+    android:animateLayoutChanges="true"
+    android:elevation="@dimen/deep_shortcuts_elevation">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/menu_option_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TaskMenu"/>
+    </ScrollView>
+</com.android.quickstep.views.TaskMenuView>

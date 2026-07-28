@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#141423"
-    android:padding="24dp">
+    android:background="@color/color_background"
+    android:padding="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,8 +14,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Battery Style"
-            android:textColor="@android:color/white"
+            android:text="@string/battery_style_heading"
+            android:textColor="@color/color_text_primary"
             android:textSize="32sp"
             android:textStyle="bold"
             android:letterSpacing="-0.02" />
@@ -23,20 +23,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Customize your battery icon"
-            android:textColor="#A0A0B0"
+            android:text="@string/battery_style_subheading"
+            android:textColor="@color/color_text_secondary"
             android:textSize="14sp"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="24dp"
-            android:textStyle="italic" />
+            android:layout_marginBottom="20dp" />
 
         <!-- Tarjeta de Estilos -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/card_bg"
-            android:padding="8dp">
+            android:background="@drawable/card_light"
+            android:padding="6dp">
 
             <!-- Fila iOS 26 -->
             <LinearLayout
@@ -45,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:background="@drawable/row_default"
+                android:background="@drawable/row_light_default"
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true">
@@ -60,10 +59,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="iOS 26"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold"
                     android:textSize="16sp" />
             </LinearLayout>
+
             <!-- Fila iOS 17 -->
             <LinearLayout
                 android:id="@+id/rowIos17"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:background="@drawable/row_default"
+                android:background="@drawable/row_light_default"
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true">
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="iOS 17"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:background="@drawable/row_selected"
+                android:background="@drawable/row_light_selected"
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true">
@@ -113,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="ONE UI 9"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:background="@drawable/row_default"
+                android:background="@drawable/row_light_default"
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true">
@@ -140,23 +140,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="ONE UI 8"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold"
                     android:textSize="16sp" />
             </LinearLayout>
-
-
         </LinearLayout>
 
-        <!-- Tarjeta de Colores (Nueva) -->
+        <!-- Tarjeta de Colores -->
         <LinearLayout
             android:id="@+id/btnPersonalizarColores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:background="@drawable/card_bg"
-            android:layout_marginTop="16dp"
+            android:background="@drawable/card_light_selector"
+            android:layout_marginTop="12dp"
             android:padding="20dp"
             android:clickable="true"
             android:focusable="true">
@@ -166,7 +164,7 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_bateria"
                 android:layout_marginEnd="16dp"
-                app:tint="#A0A0B0" />
+                app:tint="@color/color_icon_tint" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -177,16 +175,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Custom Colors"
-                    android:textColor="@android:color/white"
+                    android:text="@string/custom_colors"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Change colors for every state"
-                    android:textColor="#A0A0B0"
+                    android:text="@string/custom_colors_desc"
+                    android:textColor="@color/color_text_secondary"
                     android:textSize="13sp"
                     android:layout_marginTop="2dp" />
             </LinearLayout>
@@ -195,7 +193,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_flecha"
-                app:tint="#555566" />
+                app:tint="@color/color_text_tertiary" />
         </LinearLayout>
 
     </LinearLayout>
@@ -208,15 +206,15 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="@drawable/card_bg"
+        android:background="@drawable/bg_button_restart"
         android:clickable="true"
         android:focusable="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go Back"
-            android:textColor="@android:color/white"
+            android:text="@string/go_back"
+            android:textColor="@color/color_fab_icon"
             android:textStyle="bold"
             android:textSize="16sp" />
     </LinearLayout>

@@ -107,6 +107,17 @@ public class BatteryHook {
             TextView textoPorcentaje = (TextView) XposedHelpers.getObjectField(param.thisObject, "mBatteryLevel");
             if (textoPorcentaje != null) {
                 textoPorcentaje.setVisibility(View.GONE);
+                
+                // Aggressively squash the view to 0x0 so it never shows up again on rotation or dark mode
+                android.view.ViewGroup.LayoutParams lp = textoPorcentaje.getLayoutParams();
+                if (lp != null) {
+                    lp.width = 0;
+                    lp.height = 0;
+                    textoPorcentaje.setLayoutParams(lp);
+                }
+                textoPorcentaje.setPadding(0, 0, 0, 0);
+                textoPorcentaje.setTextSize(0);
+                textoPorcentaje.setText("");
             }
         } catch (Throwable t) {
             XposedBridge.log("LG_Extended/Battery: error ocultando texto de porcentaje: " + t.getMessage());

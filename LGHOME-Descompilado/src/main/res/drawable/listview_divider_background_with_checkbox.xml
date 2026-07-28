@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:start="@dimen/listview_divider_background_start_with_checkbox"
+        android:end="@dimen/listview_divider_background_end_with_checkbox">
+        <shape android:shape="rectangle">
+            <solid android:color="0x208006a"/>
+            <size android:height="?android:attr/dividerHeight"/>
+        </shape>
+    </item>
+</layer-list>

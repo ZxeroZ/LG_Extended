@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/background_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.lge.launcher3.wallpaperpicker.WallpaperChooserGallery
+            android:id="@+id/gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spacing="@dimen/wallpaperpicker_preview_spacing"
+            android:layoutDirection="ltr"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarStyle">
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/set"
+                android:background="@drawable/wallpaperpicker_set_btn_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/wallpaper_instructions"
+                android:textAllCaps="true"
+                style="?android:attr/buttonBarButtonStyle"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

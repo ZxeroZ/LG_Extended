@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.lge.lgdynamicactionbar.CoordinatorLayout xmlns:lge="http://schemas.android.com/apk/res/com.lge"
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foreground="0x20202d4"
+        android:layout_weight="1">
+        <include layout="@layout/launcher_app_bar"/>
+        <androidx.core.widget.NestedScrollView
+            android:layout_gravity="fill_vertical"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            lge:layout_behavior="0x20d016f">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="0x20202d4">
+                <TextView
+                    android:id="@+id/recent_uninstall_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_trash_desc"
+                    android:accessibilityTraversalAfter="@+id/recent_uninstall_no_apps_message"
+                    style="?unknown_attr_ref: 2010012"/>
+                <TextView
+                    android:textSize="@dimen/recent_uninstall_no_apps_txt_size"
+                    android:gravity="center"
+                    android:id="@+id/recent_uninstall_no_apps_message"
+                    android:background="?android:attr/colorForeground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/app_trash_no_apps_message"/>
+                <ListView
+                    android:id="@+id/recent_unisntall_list"
+                    android:clipToPadding="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="false"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:foreground="0x20202d4"
+                    android:divider="@drawable/listview_divider_background_with_icon"
+                    android:overScrollHeader="?android:attr/colorForeground"
+                    android:overScrollFooter="?android:attr/colorForeground"
+                    android:nestedScrollingEnabled="true"/>
+                <FrameLayout
+                    android:id="@+id/list_footer"
+                    android:background="?android:attr/colorForeground"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.lge.lgdynamicactionbar.CoordinatorLayout>
+</LinearLayout>

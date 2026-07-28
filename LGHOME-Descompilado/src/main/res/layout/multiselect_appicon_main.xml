@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="0x20202d4">
+    <com.lge.lgdynamicactionbar.CoordinatorLayout xmlns:lge="http://schemas.android.com/apk/res/com.lge"
+        android:id="@+id/coordinator_layout"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foreground="0x20202d4"
+        android:layout_weight="1">
+        <include layout="@layout/launcher_app_bar_ex"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            lge:layout_behavior="0x20d016f">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/multiselect_description"
+                    android:paddingBottom="@dimen/hide_apps_description_padding_bottom"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="?unknown_attr_ref: 2010012"/>
+                <GridView
+                    android:scrollbarStyle="outsideOverlay"
+                    android:gravity="center"
+                    android:id="@+id/multiselect_apps_grid_view"
+                    android:paddingLeft="@dimen/hide_apps_activity_horizontal_padding"
+                    android:paddingTop="@dimen/hide_apps_activity_vertical_padding"
+                    android:paddingRight="@dimen/hide_apps_activity_horizontal_padding"
+                    android:paddingBottom="@dimen/hide_apps_activity_vertical_padding"
+                    android:focusable="true"
+                    android:saveEnabled="false"
+                    android:clipToPadding="false"
+                    android:persistentDrawingCache="all"
+                    android:alwaysDrawnWithCache="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scrollingCache="true"
+                    android:foreground="0x20202d4"
+                    android:horizontalSpacing="0dp"
+                    android:verticalSpacing="@dimen/hide_apps_vertical_spacing"
+                    android:stretchMode="columnWidth"
+                    android:numColumns="@integer/hide_apps_setting_grid_columns"
+                    android:layout_weight="1"
+                    android:smoothScrollbar="true"
+                    android:layerType="none"
+                    android:nestedScrollingEnabled="true"/>
+            </LinearLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_gravity="fill_vertical"
+                android:background="?android:attr/colorForeground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <View
+                    android:background="?android:attr/colorForeground"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+            </androidx.core.widget.NestedScrollView>
+            <LinearLayout
+                android:background="?android:attr/colorForeground"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </com.lge.lgdynamicactionbar.CoordinatorLayout>
+    <include layout="@layout/footer_buttons"/>
+</LinearLayout>

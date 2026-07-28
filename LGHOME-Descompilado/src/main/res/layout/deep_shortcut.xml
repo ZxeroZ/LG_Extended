@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.shortcuts.DeepShortcutView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/bg_pill_width"
+    android:layout_height="@dimen/bg_pill_height">
+    <com.android.launcher3.shortcuts.DeepShortcutTextView
+        android:textSize="14sp"
+        android:gravity="start|center_vertical"
+        android:id="@+id/bubble_text"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawablePadding="@dimen/deep_shortcut_drawable_padding"
+        android:drawableEnd="@drawable/deep_shortcuts_drag_handle"
+        android:fontFamily="sans-serif"
+        android:textAlignment="viewStart"
+        android:paddingStart="@dimen/bg_popup_item_height"
+        android:paddingEnd="@dimen/popup_padding_end"
+        launcher:iconDisplay="shortcut_popup"
+        launcher:iconSizeOverride="@dimen/deep_shortcut_icon_size"
+        launcher:layoutHorizontal="true"
+        style="@style/BaseIcon"/>
+    <View
+        android:layout_gravity="start|center_vertical"
+        android:id="@+id/icon"
+        android:layout_width="@dimen/deep_shortcut_icon_size"
+        android:layout_height="@dimen/deep_shortcut_icon_size"
+        android:layout_margin="@dimen/deep_shortcut_padding_start"/>
+    <View
+        android:layout_gravity="end|bottom"
+        android:id="@+id/divider"
+        android:background="?android:attr/listDivider"
+        android:visibility="gone"
+        android:layout_width="@dimen/deep_shortcuts_divider_width"
+        android:layout_height="@dimen/popup_item_divider_height"
+        android:layout_marginEnd="@dimen/deep_shortcuts_divider_right_margin"/>
+</com.android.launcher3.shortcuts.DeepShortcutView>

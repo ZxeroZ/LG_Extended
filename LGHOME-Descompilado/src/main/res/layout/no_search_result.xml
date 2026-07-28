@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="clip_vertical"
+    android:orientation="vertical"
+    android:id="@+id/no_search_result"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/no_search_result_text_color"
+        android:gravity="center_horizontal"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="@string/sp_search_no_results_NORMAL"/>
+</FrameLayout>

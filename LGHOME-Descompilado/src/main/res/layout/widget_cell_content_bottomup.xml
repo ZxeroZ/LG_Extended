@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="@dimen/widget_name_dim_text_size"
+            android:textColor="@color/bottomup_widget_text_color"
+            android:id="@+id/widget_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="-4dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_marginStart="5dp"/>
+        <TextView
+            android:textSize="@dimen/widget_name_dim_text_size"
+            android:textColor="@color/bottomup_widget_text_color"
+            android:id="@+id/widget_dims"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
+    <com.android.launcher3.widget.WidgetImageView
+        android:id="@+id/widget_preview"
+        android:background="@drawable/bg_widget_preview_round_rect"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</merge>

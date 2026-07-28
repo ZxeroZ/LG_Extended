@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.LauncherRootView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.android.quickstep.fallback.RecentsDragLayer
+        android:id="@+id/drag_layer"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.android.quickstep.fallback.FallbackRecentsView
+            android:theme="@style/HomeScreenElementTheme"
+            android:id="@+id/overview_panel"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:outlineProvider="none"/>
+        <include layout="@layout/overview_clear_all_button"/>
+        <include layout="@layout/recommand_app_layout"/>
+    </com.android.quickstep.fallback.RecentsDragLayer>
+</com.android.launcher3.LauncherRootView>

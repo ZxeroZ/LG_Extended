@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.quickstep.views.LauncherRecentsView
+        android:theme="@style/HomeScreenElementTheme"
+        android:id="@+id/overview_panel"
+        android:focusableInTouchMode="true"
+        android:visibility="invisible"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:outlineProvider="none"
+        android:accessibilityPaneTitle="@string/accessibility_recent_apps"/>
+    <include layout="@layout/overview_clear_all_button"/>
+    <include layout="@layout/recommand_app_layout"/>
+</merge>

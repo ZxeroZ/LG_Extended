@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+    <TextView
+        android:textSize="0x20c012f"
+        android:gravity="start|center_vertical"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="54dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        style="?android:attr/windowTitleStyle"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+    <TextView
+        android:textSize="0x20c011f"
+        android:textColor="0x20800cd"
+        android:id="@+id/subtitle"
+        android:paddingTop="@dimen/dialog_description_padding_top"
+        android:paddingBottom="@dimen/dialog_description_padding_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dialog_description_padding_start"
+        android:paddingEnd="@dimen/dialog_description_padding_end"/>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_marginStart="@dimen/group_widget_container_margin"
+    android:layout_marginEnd="@dimen/group_widget_container_margin">
+    <TextView
+        android:textSize="0x20c0136"
+        android:textStyle="normal"
+        android:textColor="@color/white_color"
+        android:gravity="center"
+        android:layout_gravity="start"
+        android:id="@+id/widget_name"
+        android:paddingTop="@dimen/group_widget_title_padding_top_bottom"
+        android:paddingBottom="@dimen/group_widget_title_padding_top_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/group_widget_title_padding_start_end"
+        android:paddingEnd="@dimen/group_widget_title_padding_start_end"/>
+    <GridView
+        android:orientation="horizontal"
+        android:id="@+id/group_widget_grid"
+        android:paddingBottom="11dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:horizontalSpacing="6dp"
+        android:verticalSpacing="6dp"
+        android:numColumns="@integer/group_widget_popup_column"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"/>
+</LinearLayout>

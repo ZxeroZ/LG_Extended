@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lge.launcher3.pageindicator.PageIndicatorExtension xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    launcher:layout_ignoreInsets="true"
+    launcher:windowSize="@integer/config_maxNumberOfPageIndicatorsToShow"/>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.folder.FolderIcon xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:defaultFocusHighlightEnabled="false"
+    launcher:layout_horizontal="true">
+    <ImageView
+        android:layout_gravity="start|center_vertical"
+        android:id="@+id/preview_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:antialias="true"
+        android:defaultFocusHighlightEnabled="false"/>
+    <com.android.launcher3.BubbleTextView
+        android:layout_gravity="start|center_vertical"
+        android:id="@+id/folder_icon_name"
+        android:textDirection="locale"
+        android:defaultFocusHighlightEnabled="false"
+        style="@style/Icon"/>
+</com.android.launcher3.folder.FolderIcon>

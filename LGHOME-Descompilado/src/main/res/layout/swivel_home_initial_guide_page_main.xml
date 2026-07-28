@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lge.launcher3.initialguide.InitialGuidePageLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <VideoView
+        android:id="@+id/initial_guide_page_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</com.lge.launcher3.initialguide.InitialGuidePageLayout>

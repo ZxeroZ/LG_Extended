@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
 
+import com.zxerox.lg_extended.log.LogWriter;
+
 public class ModPrefs extends ContentProvider {
 
     public static final String AUTHORITY = "com.zxerox.lg_extended.prefs";
@@ -31,13 +33,9 @@ public class ModPrefs extends ContentProvider {
         MatrixCursor cursor = new MatrixCursor(new String[]{"value"});
         SharedPreferences p = prefs();
 
-        Object valor;
-        if (selection != null && selection.equals("int")) {
-            valor = p.getInt(key, selectionArgs != null && selectionArgs.length > 0 ? Integer.parseInt(selectionArgs[0]) : 0);
-        } else if (selection != null && selection.equals("boolean")) {
-            valor = p.getBoolean(key, selectionArgs != null && selectionArgs.length > 0 && Boolean.parseBoolean(selectionArgs[0]));
-        } else {
-            valor = p.getString(key, selectionArgs != null && selectionArgs.length > 0 ? selectionArgs[0] : "");
+        Object valor = p.getAll().get(key);
+        if (valor == null) {
+            valor = (selectionArgs != null && selectionArgs.length > 0) ? selectionArgs[0] : "";
         }
 
         cursor.addRow(new Object[]{String.valueOf(valor)});
@@ -50,6 +48,20 @@ public class ModPrefs extends ContentProvider {
 
         String key = values.getAsString("key");
         String type = values.getAsString("type");
+
+        if ("__log_entry".equals(key) && "log".equals(type)) {
+            String raw = values.getAsString("value");
+            if (raw != null) {
+                String[] parts = raw.split(" \\| ", 2);
+                if (parts.length == 2) {
+                    LogWriter.write(getContext(), parts[0].trim(), parts[1].trim());
+                } else {
+                    LogWriter.write(getContext(), "INFO", raw);
+                }
+            }
+            return uri;
+        }
+
         SharedPreferences.Editor editor = prefs().edit();
 
         if ("int".equals(type)) {

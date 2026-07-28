@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Icon" parent="">
+        <item name="android:textColor">@color/workspace_icon_text_color</item>
+        <item name="android:ellipsize">3</item>
+        <item name="android:gravity">0x800013</item>
+        <item name="android:layout_gravity">0x11</item>
+        <item name="android:layout_width">-1</item>
+        <item name="android:layout_height">-1</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:minLines">1</item>
+        <item name="android:shadowColor">#b0000000</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:drawablePadding">@dimen/device_profile_app_icon_drawable_padding_land</item>
+        <item name="android:lineSpacingExtra">@dimen/device_profile_app_icon_lineSpacingExtra</item>
+        <item name="android:paddingStart">@dimen/workspace_icon_margin_start_land</item>
+    </style>
+    <style name="Widget.Design.TabLayout" parent="@style/Base.Widget.Design.TabLayout">
+        <item name="tabGravity">center</item>
+        <item name="tabMode">fixed</item>
+    </style>
+</resources>

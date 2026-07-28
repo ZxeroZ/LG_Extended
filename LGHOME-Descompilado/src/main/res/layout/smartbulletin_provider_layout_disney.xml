@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lge.launcher3.smartbulletin.view.SBProviderLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/smartbulletin_provider_layout"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/smartbulletin_provider_title_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/smartbulletin_provider_title_height">
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_gravity="start|center_vertical"
+            android:id="@+id/smartbulletin_provider_title"
+            android:background="@drawable/smartbulletin_widget_title"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/smartbulletin_provider_title_padding"
+            android:paddingEnd="@dimen/smartbulletin_provider_title_padding"
+            android:layout_marginStart="11dp"
+            style="@style/smart_bulletin_app_title_bold"/>
+        <LinearLayout
+            android:layout_gravity="start|center_vertical"
+            android:orientation="horizontal"
+            android:id="@+id/provider_badgelayout"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"/>
+        <ImageButton
+            android:id="@+id/provider_collapse_button"
+            android:background="@drawable/focusable_view_bg"
+            android:focusable="true"
+            android:layout_width="@dimen/smartbulletin_actionbar_height"
+            android:layout_height="@dimen/smartbulletin_actionbar_height"
+            android:src="@drawable/smartbulletin_ic_menu"
+            android:contentDescription="@string/smartbulletin_collapse"
+            android:alpha="0.3"/>
+    </LinearLayout>
+</com.lge.launcher3.smartbulletin.view.SBProviderLayout>

@@ -3,26 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#1C1C1E"
+    android:background="@color/color_card_surface"
     android:paddingTop="24dp"
     android:paddingBottom="24dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Customize Colors"
-        android:textColor="@android:color/white"
+        android:text="@string/customize_colors"
+        android:textColor="@color/color_text_primary"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp" />
 
     <!-- SECCIÓN NORMAL -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NORMAL STATE"
-        android:textColor="#A0A0B0"
+        android:text="@string/normal_state"
+        android:textColor="@color/color_text_secondary"
         android:textSize="12sp"
         android:textStyle="bold"
         android:layout_marginStart="24dp"
@@ -34,15 +34,15 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="@drawable/color_picker_item_bg"
         android:padding="16dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Background Color"
-            android:textColor="@android:color/white"
+            android:text="@string/background_color"
+            android:textColor="@color/color_text_primary"
             android:textSize="16sp"/>
     </LinearLayout>
 
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="@drawable/color_picker_item_bg"
         android:padding="16dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
@@ -60,18 +60,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Icon / Text Color"
-            android:textColor="@android:color/white"
+            android:text="@string/icon_text_color"
+            android:textColor="@color/color_text_primary"
             android:textSize="16sp"/>
     </LinearLayout>
-
 
     <!-- SECCIÓN CARGANDO -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CHARGING STATE"
-        android:textColor="#A0A0B0"
+        android:text="@string/charging_state"
+        android:textColor="@color/color_text_secondary"
         android:textSize="12sp"
         android:textStyle="bold"
         android:layout_marginStart="24dp"
@@ -83,15 +82,15 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="@drawable/color_picker_item_bg"
         android:padding="16dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Background Color"
-            android:textColor="@android:color/white"
+            android:text="@string/background_color"
+            android:textColor="@color/color_text_primary"
             android:textSize="16sp"/>
     </LinearLayout>
 
@@ -101,7 +100,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="@drawable/color_picker_item_bg"
         android:padding="16dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
@@ -109,18 +108,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Icon / Text Color"
-            android:textColor="@android:color/white"
+            android:text="@string/icon_text_color"
+            android:textColor="@color/color_text_primary"
             android:textSize="16sp"/>
     </LinearLayout>
-
 
     <!-- SECCIÓN BATERÍA BAJA -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOW BATTERY STATE"
-        android:textColor="#A0A0B0"
+        android:text="@string/low_battery_state"
+        android:textColor="@color/color_text_secondary"
         android:textSize="12sp"
         android:textStyle="bold"
         android:layout_marginStart="24dp"
@@ -132,15 +130,15 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="@drawable/color_picker_item_bg"
         android:padding="16dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Background Color"
-            android:textColor="@android:color/white"
+            android:text="@string/background_color"
+            android:textColor="@color/color_text_primary"
             android:textSize="16sp"/>
     </LinearLayout>
 
@@ -150,15 +148,15 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="@drawable/color_picker_item_bg"
         android:padding="16dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Icon / Text Color"
-            android:textColor="@android:color/white"
+            android:text="@string/icon_text_color"
+            android:textColor="@color/color_text_primary"
             android:textSize="16sp"/>
     </LinearLayout>
 

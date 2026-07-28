@@ -3,97 +3,95 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#241f31">
+    android:background="@color/color_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
         <!-- HEADER -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="iOS Style"
-            android:textColor="@android:color/white"
+            android:text="@string/ios_style_heading"
+            android:textColor="@color/color_text_primary"
             android:textSize="32sp"
             android:textStyle="bold"
             android:letterSpacing="-0.02"
-            android:layout_marginBottom="24dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="12dp" />
 
         <!-- CARD PRINCIPAL -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/card_bg"
+            android:background="@drawable/card_light"
             android:padding="24dp"
-            android:gravity="center_horizontal"
-            android:elevation="4dp">
+            android:gravity="center_horizontal">
 
-            <!-- Ícono de multitarea (Usa el que tienes o uno de Xposed) -->
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/ic_ios"
-                app:tint="@android:color/white"
-                android:layout_marginBottom="16dp"/>
+                app:tint="@color/color_accent"
+                android:layout_marginBottom="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="iOS-style multitasking"
-                android:textColor="@android:color/white"
+                android:textColor="@color/color_text_primary"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Implements the 'recents' stack style, also known as iOS multitasking."
-                android:textColor="#B0B0B0"
+                android:text="@string/ios_style_description"
+                android:textColor="@color/color_text_secondary"
                 android:textSize="14sp"
                 android:gravity="center_horizontal"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp" />
 
-            <!-- Nota de Bugs como en la imagen -->
+            <!-- Nota de Bugs -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#1AFFFFFF"
+                android:background="@drawable/bg_card_section"
                 android:padding="12dp"
-                android:layout_marginBottom="24dp">
+                android:layout_marginBottom="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bugs known:"
-                    android:textColor="@android:color/white"
+                    android:text="@string/bugs_known"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="• Scaling effect when using Quick Switch (Minor)"
-                    android:textColor="#A0A0A0"
-                    android:textSize="12sp"/>
+                    android:text="@string/bug_scaling"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- SWITCH PARA ACTIVAR/DESACTIVAR -->
+            <!-- SWITCH -->
             <com.google.android.material.materialswitch.MaterialSwitch
                 android:id="@+id/switchIosRecents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enable Module"
-                android:textColor="@android:color/white"
+                android:text="@string/enable_module"
+                android:textColor="@color/color_text_primary"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:thumbTint="#4DB6AC"
-                app:trackTint="#334DB6AC"/>
+                app:thumbTint="@color/color_accent"
+                app:trackTint="@color/color_divider" />
 
         </LinearLayout>
     </LinearLayout>
@@ -103,20 +101,21 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="@drawable/card_bg"
+        android:background="@drawable/bg_button_restart"
         android:clickable="true"
         android:focusable="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go Back"
-            android:textColor="@android:color/white"
+            android:text="@string/go_back"
+            android:textColor="@color/color_fab_icon"
             android:textStyle="bold"
             android:textSize="16sp" />
     </LinearLayout>
 
 </RelativeLayout>
-

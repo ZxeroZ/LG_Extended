@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/launcher_bg_0_dim"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <GridView
+        android:id="@+id/app_drawer_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/app_drawer_grid_margin_top"
+        android:layout_marginBottom="@dimen/app_drawer_grid_margin_bottom"
+        android:numColumns="8"
+        android:layout_marginStart="@dimen/app_drawer_grid_margin_left"
+        android:layout_marginEnd="@dimen/app_drawer_grid_margin_right"/>
+</FrameLayout>

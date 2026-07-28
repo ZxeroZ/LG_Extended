@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites>
+    <appwidget
+        className="com.android.settings.widget.SettingsAppWidgetProvider"
+        packageName="com.android.settings"
+        screen="0"
+        spanX="4"
+        spanY="1"
+        x="0"
+        y="3"/>
+    <folder
+        screen="1"
+        title="@string/partner_folder_title"
+        x="0"
+        y="3">
+        <shortcut
+            icon="@drawable/ic_partner_link"
+            title="@string/partner_link_title"
+            uri="http://www.example.com/"/>
+        <favorite
+            className="com.android.providers.downloads.ui.DownloadList"
+            packageName="com.android.providers.downloads.ui"/>
+        <favorite
+            className="com.android.calculator2.Calculator"
+            packageName="com.android.calculator2"/>
+    </folder>
+    <partner-folder
+        screen="1"
+        x="2"
+        y="3"/>
+    <favorite
+        className="com.google.android.gm.ConversationListActivityGmail"
+        container="-101"
+        packageName="com.google.android.gm"
+        screen="0"
+        x="0"
+        y="0"/>
+    <resolve
+        container="-101"
+        screen="1"
+        x="1"
+        y="0">
+        <favorite uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MESSAGING;end"/>
+        <favorite uri="sms:"/>
+        <favorite uri="smsto:"/>
+        <favorite uri="mms:"/>
+        <favorite uri="mmsto:"/>
+        <favorite
+            className="com.google.android.talk.SigningInActivity"
+            packageName="com.google.android.talk"/>
+    </resolve>
+    <resolve
+        container="-101"
+        screen="3"
+        x="3"
+        y="0">
+        <favorite uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_BROWSER;end"/>
+        <favorite uri="http://www.example.com/"/>
+        <favorite
+            className="com.google.android.apps.chrome.Main"
+            packageName="com.android.chrome"/>
+    </resolve>
+    <resolve
+        container="-101"
+        screen="4"
+        x="4"
+        y="0">
+        <favorite uri="#Intent;action=android.media.action.STILL_IMAGE_CAMERA;end"/>
+        <favorite uri="#Intent;action=android.intent.action.CAMERA_BUTTON;end"/>
+        <favorite
+            className="com.android.camera.CameraLauncher"
+            packageName="com.google.android.GoogleCamera"/>
+    </resolve>
+</favorites>

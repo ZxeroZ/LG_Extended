@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="checkable_app_icon_check_margin_top">2dp</dimen>
+</resources>

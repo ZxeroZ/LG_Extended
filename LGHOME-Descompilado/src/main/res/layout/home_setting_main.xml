@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="0x20202d4">
+    <com.lge.lgdynamicactionbar.CoordinatorLayout xmlns:lge="http://schemas.android.com/apk/res/com.lge"
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foreground="0x20202d4"
+        android:layout_weight="1">
+        <include layout="@layout/launcher_app_bar"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            lge:layout_behavior="0x20d016f">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="0x20202d4">
+                <ListView
+                    android:id="@android:id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollHeader="?android:attr/colorForeground"
+                    android:overScrollFooter="?android:attr/colorForeground"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:nestedScrollingEnabled="true"/>
+            </LinearLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_gravity="fill_vertical"
+                android:background="?android:attr/colorForeground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no">
+                <View
+                    android:background="?android:attr/colorForeground"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+            </androidx.core.widget.NestedScrollView>
+            <LinearLayout
+                android:background="?android:attr/colorForeground"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </com.lge.lgdynamicactionbar.CoordinatorLayout>
+</LinearLayout>
