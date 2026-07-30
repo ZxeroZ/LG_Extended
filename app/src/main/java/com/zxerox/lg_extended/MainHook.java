@@ -8,6 +8,7 @@ import com.zxerox.lg_extended.hooks.DpiHook;
 import com.zxerox.lg_extended.hooks.RecentsHook;
 import com.zxerox.lg_extended.hooks.FlagSecureHook;
 import com.zxerox.lg_extended.hooks.SettingsHook;
+import com.zxerox.lg_extended.hooks.LauncherHook;
 import com.zxerox.lg_extended.log.LogWriter;
 import com.zxerox.lg_extended.prefs.ModPrefs;
 
@@ -57,6 +58,14 @@ public class MainHook implements IXposedHookLoadPackage, IXposedHookZygoteInit {
             } catch (Throwable t) {
                 XposedBridge.log("LG_Extended: Error en RecentsHook - " + t.getMessage());
                 logHook("RecentsHook", lpparam.packageName, false);
+            }
+            try {
+                new LauncherHook().hook(lpparam);
+                markHookActive("launcher");
+                logHook("LauncherHook", lpparam.packageName, true);
+            } catch (Throwable t) {
+                XposedBridge.log("LG_Extended: Error en LauncherHook - " + t.getMessage());
+                logHook("LauncherHook", lpparam.packageName, false);
             }
         }
         if (lpparam.packageName.equals("android")) {

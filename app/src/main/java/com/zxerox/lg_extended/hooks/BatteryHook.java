@@ -108,7 +108,6 @@ public class BatteryHook {
             if (textoPorcentaje != null) {
                 textoPorcentaje.setVisibility(View.GONE);
                 
-                // Aggressively squash the view to 0x0 so it never shows up again on rotation or dark mode
                 android.view.ViewGroup.LayoutParams lp = textoPorcentaje.getLayoutParams();
                 if (lp != null) {
                     lp.width = 0;
