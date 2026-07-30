@@ -40,11 +40,6 @@
 - **DPI Override:** Forces custom screen densities system-wide.
 - **Instant Apply:** Automatically force-closes the target app (like Settings or Launcher) when a mod is toggled so changes apply immediately.
 
-<br>
-
-<div align="center">
-  <i>(Add screenshots here)</i><br><br>
-</div>
 
 <br>
 
