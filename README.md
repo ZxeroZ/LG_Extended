@@ -1,14 +1,14 @@
 <div align="center">
-  <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="160" style="border-radius: 20%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+  <img src="icono.png" width="150" style="border-radius: 20%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
   
   <br><br>
   
-  # 🛠️ LG Extended
+  # LG Extended
   
   <h3><i>"Stock is a suggestion"</i></h3>
 
   <p>
-    <b>The Open-source UI customizer for the LG V60</b>
+    <b>An open-source UI customizer for the LG V60</b>
   </p>
 
   <br>
@@ -27,53 +27,53 @@
 
 <hr>
 
-## 📖 About LG Extended
+## About
 
-**LG Extended** is a powerful Xposed/LSPosed module designed exclusively to breathe new life into the LG V60. Tired of the outdated stock LG UI? LG Extended intercepts system UI elements on-the-fly and modernizes them with an elegant, smooth, and highly customizable aesthetic. 
+**LG Extended** is an Xposed/LSPosed module built specifically for the LG V60. It hooks directly into the system framework and stock LG apps to replace and improve various UI elements on the fly.
 
-From an iOS-inspired Recents menu to a beautifully spaced OneUI-like Settings layout, we make sure that **stock is just a suggestion**.
+## Features
 
-## 🚀 Key Features
-
-| Feature | Description |
-| :--- | :--- |
-| **🍎 iOS-Style Recents** | Completely revamps the multitasking screen with thick cards, super rounded corners (26dp), overlapping physics, and minimalist disappearing titles. |
-| **🎨 OneUI Settings** | Transforms the boring list of the Settings app into floating cards grouped by categories with sleek, muted vector icons. |
-| **🔋 Battery Icon Mods** | Hide the ugly stock battery percentage text and replace the battery icon with clean, custom SVG designs in the status bar. |
-| **📏 DPI Override** | Force custom screen densities on the fly without needing a computer or `adb` commands. |
-| **⚡ Instant Apply** | Powered by Root, applying modifications instantly force-closes the target app (like Settings or Launcher) for a seamless, immediate refresh. |
-
+- **iOS-Style Recents:** Modifies the multitasking view with thicker cards, 26dp rounded corners, overlapping animations, and fading titles.
+- **OneUI Settings Layout:** Replaces the default settings list with floating cards grouped by categories, using custom muted vector icons.
+- **Auto Sort App Drawer:** Automatically triggers the alphabetical sorting in the LG Launcher whenever a new app is installed.
+- **Battery Icon Mods:** Removes the default battery percentage text and injects custom SVG battery icons directly into the status bar.
+- **DPI Override:** Forces custom screen densities system-wide.
+- **Instant Apply:** Automatically force-closes the target app (like Settings or Launcher) when a mod is toggled so changes apply immediately.
 
 <br>
 
-## ⚠️ Requirements
+<div align="center">
+  <i>(Add screenshots here)</i><br><br>
+</div>
 
-Before you install, ensure your device meets these strict requirements. **Do not attempt to use this on other devices!**
+<br>
+
+## Requirements
 
 - **Device:** LG V60 ThinQ
 - **ROM:** Stock LG Android 13 **OR** Thunder OS (v1.2 or older)
-- **Root:** Magisk, KernelSU, or APatch installed
-- **Framework:** LSPosed installed and fully active
+- **Root:** Magisk, KernelSU, or APatch
+- **Framework:** LSPosed
 
-## 📦 Installation & Setup
+## Installation
 
-1. **Download** the latest `app-release.apk` from the [Releases](#) page.
-2. **Install** the app on your LG V60.
-3. Open the app and grant **Superuser (Root) Permissions**.
-4. Open the **LSPosed Manager** app.
-5. Go to the **Modules** tab, find **LG Extended**, and **Enable it**.
-6. Ensure the target applications (Settings, System UI, Inicio/Launcher) are checked in the scope.
-7. **Reboot your device**.
-8. Open LG Extended, toggle your favorite mods, and see the magic happen instantly!
+1. Download the latest `app-release.apk` from the Releases page.
+2. Install the app on your LG V60.
+3. Open the app and grant Superuser (Root) permissions.
+4. Open the LSPosed Manager.
+5. Go to Modules, find **LG Extended**, and enable it.
+6. Make sure the target apps (Settings, System UI, Inicio/Launcher) are checked.
+7. Reboot the device.
+8. Open LG Extended and toggle the features you want.
 
-## 🤝 Contributing & Support
+## Contributing
 
-LG Extended is built for the community. If you are a developer or a designer, feel free to submit Pull Requests to add new hooks, tweak existing ones, or contribute new icons. 
+Pull Requests are welcome. If you want to add new hooks, fix bugs, or add new icons, feel free to submit a PR. 
 
-If you encounter bugs (like disappearing texts or layout overlaps), please open an **Issue** with your specific ROM version and steps to reproduce.
+If you find a bug (like layout issues or things not applying correctly), open an Issue with your ROM version and steps to reproduce.
 
 ---
 
 <div align="center">
-  Crafted with ❤️ by <b>ZxeroZ</b> for the LG Community.
+  Developed by <b>ZxeroZ</b>
 </div>
