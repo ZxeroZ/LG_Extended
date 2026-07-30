@@ -8,7 +8,7 @@
   <h3><i>"Stock is a suggestion"</i></h3>
 
   <p>
-    <b>The ultimate open-source UI customizer for the LG V60</b>
+    <b>The Open-source UI customizer for the LG V60</b>
   </p>
 
   <br>
