@@ -3,7 +3,7 @@
   
   <br><br>
   
-  # LG Extended
+  # LG Extended by ZxeroZ
   
   <h3><i>"Stock is a suggestion"</i></h3>
 
