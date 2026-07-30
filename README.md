@@ -67,6 +67,12 @@ Pull Requests are welcome. If you want to add new hooks, fix bugs, or add new ic
 
 If you find a bug (like layout issues or things not applying correctly), open an Issue with your ROM version and steps to reproduce.
 
+## License
+
+This project is licensed under the **GNU GPLv3 License**.
+
+You are free to use, modify, and redistribute this software, but **you must give explicit credit to the original author (ZxeroZ)**. Furthermore, any derivative work or repackaged version of this module must also be open-source and released under the exact same GPLv3 license. Selling this software without providing the source code is strictly prohibited.
+
 ---
 
 <div align="center">
