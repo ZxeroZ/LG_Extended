@@ -43,16 +43,6 @@ From an iOS-inspired Recents menu to a beautifully spaced OneUI-like Settings la
 | **📏 DPI Override** | Force custom screen densities on the fly without needing a computer or `adb` commands. |
 | **⚡ Instant Apply** | Powered by Root, applying modifications instantly force-closes the target app (like Settings or Launcher) for a seamless, immediate refresh. |
 
-<br>
-
-<div align="center">
-  <i>(Add your own screenshots here by uploading them to GitHub!)</i><br><br>
-  <img src="https://via.placeholder.com/250x500.png?text=Settings+Preview" width="30%" />
-  &nbsp;&nbsp;
-  <img src="https://via.placeholder.com/250x500.png?text=Recents+Preview" width="30%" />
-  &nbsp;&nbsp;
-  <img src="https://via.placeholder.com/250x500.png?text=App+UI+Preview" width="30%" />
-</div>
 
 <br>
 
