@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LG Extended</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_hooks">Hooks</string>
+    <string name="nav_logs">Logs</string>
+    <string name="nav_settings">Ajustes</string>
+
+    <!-- Home Tab -->
+    <string name="home_tagline">"Stock is a suggestion"</string>
+    <string name="home_author">por ZxeroZ</string>
+    <string name="device_info_title">Información del Dispositivo</string>
+    <string name="status_title">Estado</string>
+    <string name="module_info_title">Información del Módulo</string>
+    <string name="lsposed_active">LSPosed Activo</string>
+    <string name="lsposed_inactive">LSPosed Inactivo</string>
+    <string name="root_granted">Root Otorgado</string>
+    <string name="root_denied">Root Denegado</string>
+    <string name="root_solution">Solución Root</string>
+    <string name="module_version">Versión 1.5</string>
+    <string name="module_scope">Alcance: SystemUI, Launcher3, Android Settings</string>
+    <string name="checking_status">Comprobando…</string>
+
+    <!-- Hooks Tab -->
+    <string name="hooks_title">Hooks</string>
+    <string name="hooks_subtitle">Gestiona todos los hooks activos</string>
+    <string name="battery_style_title">Estilo de Batería</string>
+    <string name="battery_style_desc">Personaliza el icono de batería</string>
+    <string name="ios_style_title">Estilo iOS</string>
+    <string name="ios_style_desc">Multitarea estilo iOS</string>
+    <string name="dpi_scale_title">Escala DPI</string>
+    <string name="dpi_scale_desc">Cambiar la densidad de pantalla</string>
+    <string name="security_bypass_title">Bypass de Seguridad</string>
+    <string name="security_bypass_desc">Omitir restricciones del sistema</string>
+    <string name="restart_system_ui">Reiniciar System UI</string>
+
+    <!-- Placeholder -->
+    <string name="coming_soon">Próximamente</string>
+    <string name="coming_soon_desc">Esta sección está en desarrollo</string>
+
+    <!-- Battery Style -->
+    <string name="battery_style_heading">Estilo de Batería</string>
+    <string name="battery_style_subheading">Personaliza tu icono de batería</string>
+    <string name="custom_colors">Colores Personalizados</string>
+    <string name="custom_colors_desc">Cambia colores para cada estado</string>
+    <string name="go_back">Volver</string>
+
+    <!-- iOS Style -->
+    <string name="ios_style_heading">Estilo iOS</string>
+    <string name="ios_style_description">Implementa el estilo de pila en \'recientes\', también conocido como multitarea iOS.</string>
+    <string name="bugs_known">Bugs conocidos:</string>
+    <string name="bug_scaling">• Efecto de escala al usar Quick Switch (Menor)</string>
+    <string name="enable_module">Habilitar Módulo</string>
+
+    <!-- DPI -->
+    <string name="dpi_heading">Cambiador de DPI</string>
+    <string name="dpi_subheading">Cambia el DPI de apps compatibles</string>
+
+    <!-- Bypass -->
+    <string name="bypass_heading">Bypassing</string>
+    <string name="flag_secure_title">FLAG_SECURE</string>
+    <string name="flag_secure_desc">Desactiva el FLAG_SECURE de Android que evita capturas de pantalla en apps que lo invocan.</string>
+    <string name="more_mods_coming">Más mods próximamente.</string>
+
+    <!-- Color Picker -->
+    <string name="customize_colors">Personalizar Colores</string>
+    <string name="normal_state">ESTADO NORMAL</string>
+    <string name="charging_state">ESTADO CARGANDO</string>
+    <string name="low_battery_state">BATERÍA BAJA</string>
+    <string name="background_color">Color de Fondo</string>
+    <string name="icon_text_color">Color de Icono/Texto</string>
+    <string name="border_color">Color de Borde</string>
+
+    <!-- DPI Dialog -->
+    <string name="configure_dpi">Configurar DPI</string>
+    <string name="dpi_dialog_hint">ej. 420</string>
+    <string name="dpi_warning">⚠ Esta app debe estar habilitada en el alcance de LSPosed para que el cambio surta efecto.</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Guardar</string>
+
+    <!-- Settings Tab -->
+    <string name="settings_title">Ajustes de App</string>
+    <string name="settings_subtitle">Configura la UI del módulo</string>
+    <string name="language">Idioma</string>
+    <string name="language_desc">Cambiar el idioma de visualización</string>
+    
+    <!-- Language Selection -->
+    <string name="select_language">Seleccionar Idioma</string>
+    <string name="lang_system_default">Predeterminado</string>
+    <string name="lang_english">English</string>
+    <string name="lang_spanish">Español</string>
+
+    <!-- System Info -->
+    <string name="info_model">Modelo</string>
+    <string name="info_android">Android</string>
+    <string name="info_kernel">Kernel</string>
+    <string name="info_arch">Arq</string>
+    <string name="info_lsposed">LSPosed</string>
+    <string name="info_root">Root</string>
+
+    <!-- Additional Hooks -->
+    <string name="oneui_settings_title">Iconos Ajustes OneUI</string>
+    <string name="oneui_settings_desc">Reemplaza iconos de ajustes por estilo OneUI</string>
+    <string name="miui_qs_title">Ajustes Rápidos MIUI</string>
+    <string name="miui_qs_desc">Reemplaza toggles QS con estilo squircle MIUI</string>
+    <string name="customize_settings_title">Personalizar Ajustes</string>
+    <string name="customize_settings_desc">Cambia avatar, nombre y frase del perfil</string>
+</resources>

@@ -54,10 +54,13 @@
                 android:focusable="true">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_bateria"
-                    app:tint="@color/color_icon_tint" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_icon_squircle"
+                    android:backgroundTint="#34C759"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_menu_battery"
+                    app:tint="@android:color/white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -84,10 +87,9 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_flecha"
-                    app:tint="@color/color_text_tertiary" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
             <!-- Divider -->
@@ -95,7 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/color_divider"
-                android:layout_marginStart="56dp" />
+                android:layout_marginStart="62dp" />
 
             <!-- iOS Style -->
             <LinearLayout
@@ -110,10 +112,13 @@
                 android:focusable="true">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_icon_squircle"
+                    android:backgroundTint="#007AFF"
+                    android:padding="6dp"
                     android:src="@drawable/ic_ios"
-                    app:tint="@color/color_icon_tint" />
+                    app:tint="@android:color/white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -166,10 +171,13 @@
                 android:focusable="true">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_icon_squircle"
+                    android:backgroundTint="#FF9500"
+                    android:padding="5dp"
                     android:src="@drawable/ic_dpi"
-                    app:tint="@color/color_icon_tint" />
+                    app:tint="@android:color/white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -222,10 +230,13 @@
                 android:focusable="true">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_icon_squircle"
+                    android:backgroundTint="#FF3B30"
+                    android:padding="6dp"
                     android:src="@drawable/ic_bps"
-                    app:tint="@color/color_danger" />
+                    app:tint="@android:color/white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -279,10 +290,13 @@
                 android:focusable="true">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_icon_squircle"
+                    android:backgroundTint="#AF52DE"
+                    android:padding="6dp"
                     android:src="@drawable/ic_settings"
-                    app:tint="@color/color_icon_tint" />
+                    app:tint="@android:color/white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -294,7 +308,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="OneUI Settings Icons"
+                        android:text="@string/oneui_settings_title"
                         android:textColor="@color/color_text_primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -302,7 +316,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Replace default settings icons with OneUI style"
+                        android:text="@string/oneui_settings_desc"
                         android:textColor="@color/color_text_secondary"
                         android:textSize="13sp"
                         android:layout_marginTop="2dp" />
@@ -314,6 +328,65 @@
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:focusable="false" />
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_divider"
+                android:layout_marginStart="56dp" />
+
+            <!-- Miui QS Style -->
+            <LinearLayout
+                android:id="@+id/btnMiuiQs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/menu_item_bg"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_icon_squircle"
+                    android:backgroundTint="#FF9500"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_settings"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/miui_qs_title"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/miui_qs_desc"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="13sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_flecha"
+                    app:tint="@color/color_text_tertiary" />
             </LinearLayout>
 
             <!-- Divider -->
@@ -336,10 +409,13 @@
                 android:focusable="true">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_icon_squircle"
+                    android:backgroundTint="#32ADE6"
+                    android:padding="6dp"
                     android:src="@drawable/ic_settings"
-                    app:tint="@color/color_accent" />
+                    app:tint="@android:color/white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -351,7 +427,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Customize Settings"
+                        android:text="@string/customize_settings_title"
                         android:textColor="@color/color_text_primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -359,7 +435,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Change profile card avatar, name and phrase"
+                        android:text="@string/customize_settings_desc"
                         android:textColor="@color/color_text_secondary"
                         android:textSize="13sp"
                         android:layout_marginTop="2dp" />
@@ -372,60 +448,7 @@
                     app:tint="@color/color_text_tertiary" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/color_divider"
-                android:layout_marginStart="56dp" />
 
-            <LinearLayout
-                android:id="@+id/btnAutoSortApps"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:background="@drawable/menu_item_bg"
-                android:padding="16dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_aplicaciones"
-                    app:tint="@color/color_icon_tint" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Auto Sort Apps"
-                        android:textColor="@color/color_text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Automatically sort app drawer alphabetically on install"
-                        android:textColor="@color/color_text_secondary"
-                        android:textSize="13sp"
-                        android:layout_marginTop="2dp" />
-                </LinearLayout>
-
-                <Switch
-                    android:id="@+id/switchAutoSortApps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="false" />
-            </LinearLayout>
 
         </LinearLayout>
         <Space

@@ -18,8 +18,8 @@
     <string name="root_granted">Root Granted</string>
     <string name="root_denied">Root Denied</string>
     <string name="root_solution">Root Solution</string>
-    <string name="module_version">Version 1.0</string>
-    <string name="module_scope">Scope: SystemUI, Launcher</string>
+    <string name="module_version">Version 1.5</string>
+    <string name="module_scope">Scope: SystemUI, Launcher3, Android Settings</string>
     <string name="checking_status">Checking…</string>
 
     <!-- Hooks Tab -->
@@ -70,6 +70,7 @@
     <string name="low_battery_state">LOW BATTERY STATE</string>
     <string name="background_color">Background Color</string>
     <string name="icon_text_color">Icon / Text Color</string>
+    <string name="border_color">Border Color</string>
 
     <!-- DPI Dialog -->
     <string name="configure_dpi">Configure DPI</string>
@@ -77,4 +78,32 @@
     <string name="dpi_warning">⚠ This app must be enabled in LSPosed\'s module scope for the change to take effect.</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+
+    <!-- Settings Tab -->
+    <string name="settings_title">App Settings</string>
+    <string name="settings_subtitle">Configure module UI</string>
+    <string name="language">Language</string>
+    <string name="language_desc">Change the display language</string>
+    
+    <!-- Language Selection -->
+    <string name="select_language">Select Language</string>
+    <string name="lang_system_default">System Default</string>
+    <string name="lang_english">English</string>
+    <string name="lang_spanish">Español</string>
+
+    <!-- System Info -->
+    <string name="info_model">Model</string>
+    <string name="info_android">Android</string>
+    <string name="info_kernel">Kernel</string>
+    <string name="info_arch">Arch</string>
+    <string name="info_lsposed">LSPosed</string>
+    <string name="info_root">Root</string>
+
+    <!-- Additional Hooks -->
+    <string name="oneui_settings_title">OneUI Settings Icons</string>
+    <string name="oneui_settings_desc">Replace default settings icons with OneUI style</string>
+    <string name="miui_qs_title">MIUI Quick Settings</string>
+    <string name="miui_qs_desc">Replace QS toggles with MIUI squircle style</string>
+    <string name="customize_settings_title">Customize Settings</string>
+    <string name="customize_settings_desc">Change profile card avatar, name and phrase</string>
 </resources>

@@ -30,15 +30,17 @@ public class BatteryIconView extends View {
     private int altoDeseado;
     private float densidad;
 
-    // Colores de Fondo
     private int colorFondo = Color.parseColor("#1C1C1E");
     private int colorFondoCargando = Color.parseColor("#34C759");
     private int colorFondoBajo = Color.parseColor("#FF3B30");
 
-    // Colores de Texto
     private int colorTexto = Color.WHITE;
     private int colorTextoCargando = Color.WHITE;
     private int colorTextoBajo = Color.WHITE;
+    
+    private int colorBorde = Color.WHITE;
+    private int colorBordeCargando = Color.WHITE;
+    private int colorBordeBajo = Color.WHITE;
 
     public BatteryIconView(Context context) {
         super(context);
@@ -72,8 +74,6 @@ public class BatteryIconView extends View {
         fondoRect = new RectF();
     }
 
-    // --- SETTERS DE COLORES PARA EL COLOR PICKER ---
-
     public void setColoresNormal(int colorFondo, int colorTexto) {
         this.colorFondo = colorFondo;
         this.colorTexto = colorTexto;
@@ -91,8 +91,21 @@ public class BatteryIconView extends View {
         this.colorTextoBajo = colorTexto;
         postInvalidate();
     }
-
-    // -----------------------------------------------
+    
+    public void setColoresBordeNormal(int colorBorde) {
+        this.colorBorde = colorBorde;
+        postInvalidate();
+    }
+    
+    public void setColoresBordeCargando(int colorBorde) {
+        this.colorBordeCargando = colorBorde;
+        postInvalidate();
+    }
+    
+    public void setColoresBordeBaja(int colorBorde) {
+        this.colorBordeBajo = colorBorde;
+        postInvalidate();
+    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -145,8 +158,6 @@ public class BatteryIconView extends View {
         }
     }
 
-    // --- LÓGICA DE DECISIÓN DE COLORES ---
-
     private int colorFondoActual() {
         if (cargando) return colorFondoCargando;
         if (nivel <= 20) return colorFondoBajo;
@@ -158,8 +169,12 @@ public class BatteryIconView extends View {
         if (nivel <= 20) return colorTextoBajo;
         return colorTexto;
     }
-
-    // --- MÉTODOS DE DIBUJO ---
+    
+    private int colorBordeActual() {
+        if (cargando) return colorBordeCargando;
+        if (nivel <= 20) return colorBordeBajo;
+        return colorBorde;
+    }
 
     private void dibujarIos26(Canvas canvas, int ancho, int alto) {
         float nubWidth = 3f * densidad;
@@ -208,12 +223,12 @@ public class BatteryIconView extends View {
         float cuerpoAncho = ancho - nubWidth;
         float radioExterior = alto * 0.26f;
 
-        float grosorBorde = 3.0f * densidad;
+        float grosorBorde = 1.2f * densidad;
         float paddingInterior = 1.5f * densidad;
 
         fondoPaint.setStyle(Paint.Style.STROKE);
         fondoPaint.setStrokeWidth(grosorBorde);
-        fondoPaint.setColor(colorTextoActual());
+        fondoPaint.setColor(colorBordeActual());
 
         float inset = grosorBorde / 2f;
         fondoRect.set(inset, inset, cuerpoAncho - inset, alto - inset);

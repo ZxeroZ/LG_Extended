@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_card_surface"
+    android:background="#F2F2F7"
     android:paddingTop="24dp"
     android:paddingBottom="24dp">
 
@@ -17,147 +17,302 @@
         android:gravity="center"
         android:layout_marginBottom="24dp" />
 
-    <!-- SECCIÓN NORMAL -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/normal_state"
-        android:textColor="@color/color_text_secondary"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="8dp" />
-
-    <LinearLayout
-        android:id="@+id/btnColorFondoNormal"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/color_picker_item_bg"
-        android:padding="16dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp">
-        <TextView
+        android:layout_height="wrap_content">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/background_color"
-            android:textColor="@color/color_text_primary"
-            android:textSize="16sp"/>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
 
-    <LinearLayout
-        android:id="@+id/btnColorTextoNormal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/color_picker_item_bg"
-        android:padding="16dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:layout_marginBottom="16dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/icon_text_color"
-            android:textColor="@color/color_text_primary"
-            android:textSize="16sp"/>
-    </LinearLayout>
+            <!-- SECCIÓN NORMAL -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal_state"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="13sp"
+                android:textAllCaps="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp" />
 
-    <!-- SECCIÓN CARGANDO -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/charging_state"
-        android:textColor="@color/color_text_secondary"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_color_card"
+                android:layout_marginBottom="24dp">
 
-    <LinearLayout
-        android:id="@+id/btnColorFondoCargando"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/color_picker_item_bg"
-        android:padding="16dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/background_color"
-            android:textColor="@color/color_text_primary"
-            android:textSize="16sp"/>
-    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/btnColorFondoNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/background_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewFondoNormal"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
+                
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E5E5EA" android:layout_marginStart="16dp"/>
 
-    <LinearLayout
-        android:id="@+id/btnColorTextoCargando"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/color_picker_item_bg"
-        android:padding="16dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:layout_marginBottom="16dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/icon_text_color"
-            android:textColor="@color/color_text_primary"
-            android:textSize="16sp"/>
-    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/btnColorTextoNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/icon_text_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewTextoNormal"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
 
-    <!-- SECCIÓN BATERÍA BAJA -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/low_battery_state"
-        android:textColor="@color/color_text_secondary"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="8dp" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E5E5EA" android:layout_marginStart="16dp"/>
 
-    <LinearLayout
-        android:id="@+id/btnColorFondoBateriaBaja"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/color_picker_item_bg"
-        android:padding="16dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/background_color"
-            android:textColor="@color/color_text_primary"
-            android:textSize="16sp"/>
-    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/btnColorBordeNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/border_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewBordeNormal"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/btnColorTextoBateriaBaja"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/color_picker_item_bg"
-        android:padding="16dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/icon_text_color"
-            android:textColor="@color/color_text_primary"
-            android:textSize="16sp"/>
-    </LinearLayout>
+            <!-- SECCIÓN CARGANDO -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/charging_state"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="13sp"
+                android:textAllCaps="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_color_card"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:id="@+id/btnColorFondoCargando"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/background_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewFondoCargando"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E5E5EA" android:layout_marginStart="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/btnColorTextoCargando"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/icon_text_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewTextoCargando"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E5E5EA" android:layout_marginStart="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/btnColorBordeCargando"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/border_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewBordeCargando"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SECCIÓN BATERÍA BAJA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_battery_state"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="13sp"
+                android:textAllCaps="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_color_card"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:id="@+id/btnColorFondoBateriaBaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/background_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewFondoBateriaBaja"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E5E5EA" android:layout_marginStart="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/btnColorTextoBateriaBaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/icon_text_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewTextoBateriaBaja"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E5E5EA" android:layout_marginStart="16dp"/>
+                
+                <LinearLayout
+                    android:id="@+id/btnColorBordeBateriaBaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/border_color"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="16sp"/>
+                    <View
+                        android:id="@+id/previewBordeBateriaBaja"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/bg_color_circle" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SystemUI Notification Backgrounds (Dark Mode) -->
+    <!-- LG Uses #202020 for dark mode background. We make it 65% opaque. -->
+    <color name="notification_material_background_color_miui">#A6202020</color>
+    <color name="notification_material_background_dimmed_color_miui">#80202020</color>
+    <color name="notification_material_background_dimmed_color_headsup_miui">#99202020</color>
+</resources>

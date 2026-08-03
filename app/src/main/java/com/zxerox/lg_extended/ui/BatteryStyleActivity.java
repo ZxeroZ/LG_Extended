@@ -7,12 +7,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.EditText;
+import android.app.AlertDialog;
+import android.text.InputType;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.skydoves.colorpickerview.ColorPickerDialog;
-import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.zxerox.lg_extended.R;
 import com.zxerox.lg_extended.views.BatteryIconView;
 
@@ -66,8 +72,10 @@ public class BatteryStyleActivity extends AppCompatActivity {
 
             int fondoNormal = leerColorGuardado("battery_color_fondo", Color.parseColor("#1C1C1E"));
             int textoNormal = leerColorGuardado("battery_color_texto", Color.WHITE);
+            int bordeNormal = leerColorGuardado("battery_color_borde", Color.WHITE);
 
             view.setColoresNormal(fondoNormal, textoNormal);
+            view.setColoresBordeNormal(bordeNormal);
 
             view.actualizarEstado(75, false);
         }
@@ -122,77 +130,116 @@ public class BatteryStyleActivity extends AppCompatActivity {
         seleccionar(actual);
     }
 
+    private void configurarBotonColor(BottomSheetDialog dialog, View btn, View preview, String prefKey, String titulo, int fallbackColor) {
+        if (btn == null) return;
+        
+        int currentColor = leerColorGuardado(prefKey, fallbackColor);
+        if (preview != null && preview.getBackground() != null) {
+            preview.getBackground().mutate().setTint(currentColor);
+        }
+
+        btn.setOnClickListener(v -> {
+            dialog.dismiss();
+            mostrarSelectorDeColor(prefKey, titulo);
+        });
+    }
+
     private void mostrarMenuColores() {
         BottomSheetDialog bottomSheet = new BottomSheetDialog(this);
         bottomSheet.setContentView(R.layout.bottom_sheet_colors);
 
-        View btnColorFondoNormal = bottomSheet.findViewById(R.id.btnColorFondoNormal);
-        View btnColorTextoNormal = bottomSheet.findViewById(R.id.btnColorTextoNormal);
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorFondoNormal), bottomSheet.findViewById(R.id.previewFondoNormal), "battery_color_fondo", "Fondo Normal", Color.parseColor("#1C1C1E"));
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorTextoNormal), bottomSheet.findViewById(R.id.previewTextoNormal), "battery_color_texto", "Texto Normal", Color.WHITE);
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorBordeNormal), bottomSheet.findViewById(R.id.previewBordeNormal), "battery_color_borde", "Borde Normal", Color.WHITE);
 
-        View btnColorFondoCargando = bottomSheet.findViewById(R.id.btnColorFondoCargando);
-        View btnColorTextoCargando = bottomSheet.findViewById(R.id.btnColorTextoCargando);
-        View btnColorFondoBajo = bottomSheet.findViewById(R.id.btnColorFondoBateriaBaja);
-        View btnColorTextoBajo = bottomSheet.findViewById(R.id.btnColorTextoBateriaBaja);
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorFondoCargando), bottomSheet.findViewById(R.id.previewFondoCargando), "battery_color_fondo_cargando", "Fondo Cargando", Color.parseColor("#34C759"));
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorTextoCargando), bottomSheet.findViewById(R.id.previewTextoCargando), "battery_color_texto_cargando", "Texto Cargando", Color.WHITE);
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorBordeCargando), bottomSheet.findViewById(R.id.previewBordeCargando), "battery_color_borde_cargando", "Borde Cargando", Color.WHITE);
 
-        if (btnColorFondoNormal != null) {
-            btnColorFondoNormal.setOnClickListener(v -> {
-                bottomSheet.dismiss();
-                mostrarSelectorDeColor("battery_color_fondo", "Fondo Normal");
-            });
-        }
-        if (btnColorTextoNormal != null) {
-            btnColorTextoNormal.setOnClickListener(v -> {
-                bottomSheet.dismiss();
-                mostrarSelectorDeColor("battery_color_texto", "Texto Normal");
-            });
-        }
-
-        if (btnColorFondoCargando != null) {
-            btnColorFondoCargando.setOnClickListener(v -> {
-                bottomSheet.dismiss();
-                mostrarSelectorDeColor("battery_color_fondo_cargando", "Fondo Cargando");
-            });
-        }
-        if (btnColorTextoCargando != null) {
-            btnColorTextoCargando.setOnClickListener(v -> {
-                bottomSheet.dismiss();
-                mostrarSelectorDeColor("battery_color_texto_cargando", "Texto Cargando");
-            });
-        }
-
-        if (btnColorFondoBajo != null) {
-            btnColorFondoBajo.setOnClickListener(v -> {
-                bottomSheet.dismiss();
-                mostrarSelectorDeColor("battery_color_fondo_bajo", "Fondo Batería Baja");
-            });
-        }
-        if (btnColorTextoBajo != null) {
-            btnColorTextoBajo.setOnClickListener(v -> {
-                bottomSheet.dismiss();
-                mostrarSelectorDeColor("battery_color_texto_bajo", "Texto Batería Baja");
-            });
-        }
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorFondoBateriaBaja), bottomSheet.findViewById(R.id.previewFondoBateriaBaja), "battery_color_fondo_bajo", "Fondo Batería Baja", Color.parseColor("#FF3B30"));
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorTextoBateriaBaja), bottomSheet.findViewById(R.id.previewTextoBateriaBaja), "battery_color_texto_bajo", "Texto Batería Baja", Color.WHITE);
+        configurarBotonColor(bottomSheet, bottomSheet.findViewById(R.id.btnColorBordeBateriaBaja), bottomSheet.findViewById(R.id.previewBordeBateriaBaja), "battery_color_borde_bajo", "Borde Batería Baja", Color.WHITE);
 
         bottomSheet.show();
     }
     private void mostrarSelectorDeColor(String prefKey, String titulo) {
-        new ColorPickerDialog.Builder(this)
-                .setTitle(titulo)
-                .setPreferenceName(prefKey)
-                .setPositiveButton("Guardar", (ColorEnvelopeListener) (envelope, fromUser) -> {
-                    int colorSeleccionado = envelope.getColor();
+        int currentColor = leerColorGuardado(prefKey, Color.WHITE);
 
-                    ContentValues values = new ContentValues();
-                    values.put("key", prefKey);
-                    values.put("type", "int");
-                    values.put("value", colorSeleccionado);
-                    getContentResolver().insert(PREFS_URI, values);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_custom_color_picker, null);
+        builder.setView(dialogView);
 
-                    actualizarVistasPrevias();
-                })
-                .setNegativeButton("Cancelar", (dialogInterface, i) -> dialogInterface.dismiss())
-                .attachAlphaSlideBar(true)
-                .attachBrightnessSlideBar(true)
-                .show();
+        AlertDialog dialog = builder.create();
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        }
+
+        TextView titleView = dialogView.findViewById(R.id.dialogTitle);
+        titleView.setText(titulo);
+
+        com.skydoves.colorpickerview.ColorPickerView colorPickerView = dialogView.findViewById(R.id.colorPickerView);
+        com.skydoves.colorpickerview.sliders.AlphaSlideBar alphaSlideBar = dialogView.findViewById(R.id.alphaSlideBar);
+        com.skydoves.colorpickerview.sliders.BrightnessSlideBar brightnessSlideBar = dialogView.findViewById(R.id.brightnessSlideBar);
+        View hexPreview = dialogView.findViewById(R.id.hexPreview);
+        EditText hexInput = dialogView.findViewById(R.id.hexInput);
+
+        colorPickerView.attachAlphaSlider(alphaSlideBar);
+        colorPickerView.attachBrightnessSlider(brightnessSlideBar);
+        colorPickerView.setInitialColor(currentColor);
+
+        final boolean[] isUpdatingHex = {false};
+        
+        colorPickerView.setColorListener(new com.skydoves.colorpickerview.listeners.ColorEnvelopeListener() {
+            @Override
+            public void onColorSelected(com.skydoves.colorpickerview.ColorEnvelope envelope, boolean fromUser) {
+                int selectedColor = envelope.getColor();
+                if (hexPreview != null && hexPreview.getBackground() != null) {
+                    hexPreview.getBackground().mutate().setTint(selectedColor);
+                }
+                if (fromUser || !isUpdatingHex[0]) {
+                    isUpdatingHex[0] = true;
+                    hexInput.setText(String.format("#%08X", (0xFFFFFFFF & selectedColor)));
+                    isUpdatingHex[0] = false;
+                }
+            }
+        });
+
+        hexInput.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override
+            public void afterTextChanged(android.text.Editable s) {
+                if (isUpdatingHex[0]) return;
+                String hex = s.toString().trim();
+                if (!hex.startsWith("#")) {
+                    hex = "#" + hex;
+                }
+                try {
+                    int color = Color.parseColor(hex);
+                    isUpdatingHex[0] = true;
+                    colorPickerView.setInitialColor(color);
+                    if (hexPreview != null && hexPreview.getBackground() != null) {
+                        hexPreview.getBackground().mutate().setTint(color);
+                    }
+                    isUpdatingHex[0] = false;
+                } catch (Exception ignored) {}
+            }
+        });
+
+        dialogView.findViewById(R.id.btnCancel).setOnClickListener(v -> dialog.dismiss());
+        dialogView.findViewById(R.id.btnSave).setOnClickListener(v -> {
+            int finalColor = colorPickerView.getColor();
+            ContentValues values = new ContentValues();
+            values.put("key", prefKey);
+            values.put("type", "int");
+            values.put("value", finalColor);
+            getContentResolver().insert(PREFS_URI, values);
+            actualizarVistasPrevias();
+            dialog.dismiss();
+        });
+
+        dialog.show();
     }
 }

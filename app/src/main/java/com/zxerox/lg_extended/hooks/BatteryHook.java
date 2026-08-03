@@ -146,15 +146,21 @@ public class BatteryHook {
     private void aplicarColoresGuardados(Context context, BatteryIconView view) {
         int fondoNormal = leerColorGuardado(context, "battery_color_fondo", Color.parseColor("#1C1C1E"));
         int textoNormal = leerColorGuardado(context, "battery_color_texto", Color.WHITE);
+        int bordeNormal = leerColorGuardado(context, "battery_color_borde", Color.WHITE);
         view.setColoresNormal(fondoNormal, textoNormal);
+        view.setColoresBordeNormal(bordeNormal);
 
         int fondoCargando = leerColorGuardado(context, "battery_color_fondo_cargando", Color.parseColor("#34C759"));
         int textoCargando = leerColorGuardado(context, "battery_color_texto_cargando", Color.WHITE);
+        int bordeCargando = leerColorGuardado(context, "battery_color_borde_cargando", Color.WHITE);
         view.setColoresCargando(fondoCargando, textoCargando);
+        view.setColoresBordeCargando(bordeCargando);
 
         int fondoBajo = leerColorGuardado(context, "battery_color_fondo_bajo", Color.parseColor("#FF3B30"));
         int textoBajo = leerColorGuardado(context, "battery_color_texto_bajo", Color.WHITE);
+        int bordeBajo = leerColorGuardado(context, "battery_color_borde_bajo", Color.WHITE);
         view.setColoresBateriaBaja(fondoBajo, textoBajo);
+        view.setColoresBordeBaja(bordeBajo);
     }
 
     private int leerColorGuardado(Context context, String key, int fallback) {

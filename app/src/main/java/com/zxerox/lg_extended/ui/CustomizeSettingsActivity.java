@@ -125,7 +125,6 @@ public class CustomizeSettingsActivity extends AppCompatActivity {
     }
 
     private void setupListeners() {
-        // Live preview
         editName.addTextChangedListener(new android.text.TextWatcher() {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -141,16 +140,13 @@ public class CustomizeSettingsActivity extends AppCompatActivity {
             public void afterTextChanged(android.text.Editable s) {}
         });
 
-        // Avatar picker
         findViewById(R.id.avatarSelector).setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             avatarLauncher.launch(intent);
         });
 
-        // Back button
         findViewById(R.id.btnRegresar).setOnClickListener(v -> finish());
 
-        // Save
         findViewById(R.id.btnSaveProfile).setOnClickListener(v -> {
             String name = editName.getText().toString().trim();
             String phrase = editPhrase.getText().toString().trim();

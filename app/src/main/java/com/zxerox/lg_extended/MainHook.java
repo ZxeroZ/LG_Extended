@@ -11,6 +11,9 @@ import com.zxerox.lg_extended.hooks.SettingsHook;
 import com.zxerox.lg_extended.hooks.LauncherHook;
 import com.zxerox.lg_extended.log.LogWriter;
 import com.zxerox.lg_extended.prefs.ModPrefs;
+import com.zxerox.lg_extended.hooks.QSPanelHook;
+import com.zxerox.lg_extended.hooks.ScrimHook;
+import com.zxerox.lg_extended.hooks.NotificationHook;
 
 import java.lang.reflect.Method;
 
@@ -18,8 +21,10 @@ import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.IXposedHookZygoteInit;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
+import de.robv.android.xposed.IXposedHookInitPackageResources;
+import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam;
 
-public class MainHook implements IXposedHookLoadPackage, IXposedHookZygoteInit {
+public class MainHook implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
     
     public static String MODULE_PATH;
 
@@ -41,6 +46,30 @@ public class MainHook implements IXposedHookLoadPackage, IXposedHookZygoteInit {
             }
         }
         if (lpparam.packageName.equals("com.android.systemui") || lpparam.packageName.equals("com.lge.systemui")) {
+            try {
+                new QSPanelHook().hook(lpparam);
+                markHookActive("qspanel");
+                logHook("QSPanelHook", lpparam.packageName, true);
+            } catch (Throwable t) {
+                XposedBridge.log("LG_Extended: Error en QSPanelHook - " + t.getMessage());
+                logHook("QSPanelHook", lpparam.packageName, false);
+            }
+            try {
+                new ScrimHook().hook(lpparam);
+                markHookActive("scrim");
+                logHook("ScrimHook", lpparam.packageName, true);
+            } catch (Throwable t) {
+                XposedBridge.log("LG_Extended: Error en ScrimHook - " + t.getMessage());
+                logHook("ScrimHook", lpparam.packageName, false);
+            }
+            try {
+                new NotificationHook().hook(lpparam);
+                markHookActive("notification");
+                logHook("NotificationHook", lpparam.packageName, true);
+            } catch (Throwable t) {
+                XposedBridge.log("LG_Extended: Error en NotificationHook - " + t.getMessage());
+                logHook("NotificationHook", lpparam.packageName, false);
+            }
             try {
                 new BatteryHook().hook(lpparam);
                 markHookActive("battery");
@@ -110,6 +139,13 @@ public class MainHook implements IXposedHookLoadPackage, IXposedHookZygoteInit {
                 LogWriter.write(ctx, success ? "OK" : "ERR", hookName, packageName, success);
             }
         } catch (Throwable ignored) {}
+    }
+
+    @Override
+    public void handleInitPackageResources(InitPackageResourcesParam resparam) throws Throwable {
+        if (resparam.packageName.equals("com.android.systemui") || resparam.packageName.equals("com.lge.systemui")) {
+            new com.zxerox.lg_extended.hooks.SystemUIHook().hook(resparam);
+        }
     }
 
     private void markHookActive(String hookName) {

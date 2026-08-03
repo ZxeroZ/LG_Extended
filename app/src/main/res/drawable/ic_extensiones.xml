@@ -1,18 +1,3 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-    <!-- Fondo circular extensiones -->
-    <path
-        android:fillColor="#96A3B0"
-        android:pathData="M12,12m-11,0a11,11 0,1 1,22 0a11,11 0,1 1,-22 0" />
-    <!-- Glifo -->
-    <group
-        android:scaleX="0.55"
-        android:scaleY="0.55"
-        android:pivotX="12"
-        android:pivotY="12">
-        <path android:fillColor="#FFFFFF" android:pathData="M16,7V3h-2v4h-4V3H8v4H7c-1.1,0 -2,0.9 -2,2v3c0,2.55 1.92,4.63 4.4,4.93L9,17v4h2v-4h2v4h2v-4l-0.4,0.07C17.08,16.63 19,14.55 19,12V9c0,-1.1 -0.9,-2 -2,-2h-1z" />
-    </group>
-</vector>
+<?xml version='1.0' encoding='utf-8'?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#8763F7" android:pathData="M 6,1 L 18,1 C 20.76,1 23,3.24 23,6 L 23,18 C 23,20.76 20.76,23 18,23 L 6,23 C 3.24,23 1,20.76 1,18 L 1,6 C 1,3.24 3.24,1 6,1 Z" /><group android:translateX="5" android:translateY="5" android:scaleX="0.29167" android:scaleY="0.29167"><path android:fillColor="#FFFFFFFF" android:pathData="M24,38Q19,38 15.5,37.325Q12,36.65 12,35.7V34H7.25Q5.95,34 5.05,33.025Q4.15,32.05 4.25,30.75L5.8,12.75Q5.9,11.6 6.75,10.8Q7.6,10 8.75,10H39.25Q40.4,10 41.25,10.8Q42.1,11.6 42.2,12.75L43.75,30.75Q43.85,32.05 42.95,33.025Q42.05,34 40.75,34H36V35.7Q36,36.65 32.5,37.325Q29,38 24,38ZM7.25,31H40.75Q40.75,31 40.75,31Q40.75,31 40.75,31L39.25,13Q39.25,13 39.25,13Q39.25,13 39.25,13H8.75Q8.75,13 8.75,13Q8.75,13 8.75,13L7.25,31Q7.25,31 7.25,31Q7.25,31 7.25,31Z" />
+</group></vector>

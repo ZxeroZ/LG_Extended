@@ -162,7 +162,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_bateria"
+                android:src="@drawable/ic_menu_battery"
                 android:layout_marginEnd="16dp"
                 app:tint="@color/color_icon_tint" />
 

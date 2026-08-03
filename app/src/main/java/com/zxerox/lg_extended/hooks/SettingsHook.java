@@ -70,7 +70,6 @@ public class SettingsHook {
 
                                 View customCard = buildCustomCardView(context, name, phrase, base64Avatar);
 
-                                // Try to find LayoutPreference in known packages
                                 String[] possibleClasses = {
                                         "com.android.settingslib.widget.LayoutPreference",
                                         "com.android.settings.applications.LayoutPreference",
@@ -95,6 +94,54 @@ public class SettingsHook {
 
                                     XposedHelpers.callMethod(screen, "addPreference", pref);
                                     XposedBridge.log("SettingsHook: LayoutPreference injected successfully");
+
+                                    try {
+                                        android.app.Activity activity = (android.app.Activity) XposedHelpers.callMethod(fragment, "getActivity");
+                                        if (activity != null) {
+                                            int appBarId = context.getResources().getIdentifier("app_bar", "id", "com.android.settings");
+                                            if (appBarId != 0) {
+                                                View appBar = activity.findViewById(appBarId);
+                                                if (appBar != null) {
+                                                    android.view.ViewGroup.LayoutParams lp = appBar.getLayoutParams();
+                                                    if (lp != null) {
+                                                        lp.height = dpToPx(context, 180);
+                                                        appBar.setLayoutParams(lp);
+                                                    }
+                                                    
+                                                    TextView titleView = appBar.findViewById(android.R.id.text1);
+                                                    if (titleView != null) {
+                                                        titleView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 36);
+                                                        android.view.ViewGroup.MarginLayoutParams mlp = (android.view.ViewGroup.MarginLayoutParams) titleView.getLayoutParams();
+                                                        if (mlp != null) {
+                                                            mlp.bottomMargin = dpToPx(context, 16);
+                                                            titleView.setLayoutParams(mlp);
+                                                        }
+                                                    }
+                                                    XposedBridge.log("SettingsHook: Native AppBar modified successfully");
+                                                }
+                                            }
+                                        }
+                                    } catch (Throwable t) {
+                                        XposedBridge.log("SettingsHook: Error modifying Native AppBar: " + t.getMessage());
+                                    }
+
+                                    try {
+                                        Class<?> prefCategoryClass = XposedHelpers.findClass("androidx.preference.PreferenceCategory", lpparam.classLoader);
+                                        Object category = XposedHelpers.newInstance(prefCategoryClass, context);
+                                        XposedHelpers.callMethod(category, "setKey", CARD_KEY + "_divider");
+                                        XposedHelpers.callMethod(category, "setOrder", -998);
+                                        
+                                        int layoutId = context.getResources().getIdentifier("lge_preference_category_empty", "layout", "com.android.settings");
+                                        if (layoutId != 0) {
+                                            XposedHelpers.callMethod(category, "setLayoutResource", layoutId);
+                                        }
+                                        
+                                        XposedHelpers.callMethod(screen, "addPreference", category);
+                                        XposedBridge.log("SettingsHook: Divider category injected successfully");
+                                    } catch (Throwable catEx) {
+                                        XposedBridge.log("SettingsHook: Failed to inject divider category: " + catEx.getMessage());
+                                    }
+                                } else {
                                     XposedBridge.log("SettingsHook: LayoutPreference class not found, cannot inject custom view");
                                 }
 
@@ -183,7 +230,7 @@ public class SettingsHook {
                         android.view.ViewGroup.LayoutParams lp = iconView.getLayoutParams();
                         if (lp != null) {
                             float scale = ctx.getResources().getDisplayMetrics().density;
-                            int size = (int) (40 * scale + 0.5f); // 34dp to match OneUI perfectly
+                            int size = (int) (40 * scale + 0.5f);
                             lp.width = size;
                             lp.height = size;
                             iconView.setLayoutParams(lp);
@@ -226,7 +273,7 @@ public class SettingsHook {
                         if (pref != null) {
                             String key = (String) XposedHelpers.callMethod(pref, "getKey");
                             if (key != null && iconMap.containsKey(key)) {
-                                param.setResult(null); // Bypass tinting for custom icons
+                                param.setResult(null);
                             }
                         }
                     }
@@ -239,9 +286,6 @@ public class SettingsHook {
             XposedBridge.log("SettingsHook: Error hooking DynamicIconColorDecorator: " + t.getMessage());
         }
 
-        // ==========================================
-        // REMOVE DIVIDERS HOOK
-        // ==========================================
         try {
             Class<?> prefFragmentClass = XposedHelpers.findClassIfExists("androidx.preference.PreferenceFragmentCompat", lpparam.classLoader);
             if (prefFragmentClass != null) {
@@ -273,7 +317,6 @@ public class SettingsHook {
                 });
             }
             
-            // Specifically block HIGHelper which decides to show dividers
             Class<?> lgHigHelperClass = XposedHelpers.findClassIfExists("com.lge.settingslib.utils.HIGHelper", lpparam.classLoader);
             if (lgHigHelperClass != null) {
                 XposedBridge.log("SettingsHook: Hooking HIGHelper.isShowDivider");
@@ -285,15 +328,12 @@ public class SettingsHook {
     }
 
     private View buildCustomCardView(Context context, String name, String phrase, String base64Avatar) {
-        // Main Card Container
         LinearLayout card = new LinearLayout(context);
         card.setOrientation(LinearLayout.HORIZONTAL);
         
-        // Padding: left=16dp, top=20dp, right=16dp, bottom=20dp
         card.setPadding(dpToPx(context, 16), dpToPx(context, 20), dpToPx(context, 16), dpToPx(context, 20));
         card.setGravity(Gravity.CENTER_VERTICAL);
 
-        // Avatar
         ImageView avatarView = new ImageView(context);
         Bitmap avatarBmp = decodeBase64Avatar(base64Avatar, name);
         Bitmap circularBmp = createCircularBitmap(avatarBmp);
@@ -304,7 +344,6 @@ public class SettingsHook {
         ivParams.gravity = Gravity.CENTER_VERTICAL;
         card.addView(avatarView, ivParams);
 
-        // Text Layout
         LinearLayout textLayout = new LinearLayout(context);
         textLayout.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(
@@ -313,14 +352,12 @@ public class SettingsHook {
         textLayout.setGravity(Gravity.CENTER_VERTICAL);
         textLayout.setLayoutParams(textParams);
 
-        // Name
         TextView nameView = new TextView(context);
         nameView.setText(name);
         nameView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         nameView.setTypeface(null, Typeface.BOLD);
         nameView.setTextColor(getThemeColor(context, android.R.attr.textColorPrimary, 0xFF000000));
 
-        // Phrase
         TextView phraseView = new TextView(context);
         phraseView.setText(phrase);
         phraseView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13);

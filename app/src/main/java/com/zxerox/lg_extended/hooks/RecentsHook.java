@@ -16,7 +16,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
 public class RecentsHook {
 
-    private static final float STACK_GAP = 160f;
+    private static final float STACK_GAP = 150f; 
     private static final Map<View, Float> lastScaleMap = new WeakHashMap<>();
 
     public void hook(final LoadPackageParam lpparam) throws Throwable {
@@ -24,13 +24,12 @@ public class RecentsHook {
             return;
         }
 
-        // Corner Radius
         hookSilently(lpparam.classLoader, "com.android.quickstep.util.TaskCornerRadius", "get", android.content.Context.class, new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) {
                 android.content.Context ctx = (android.content.Context) param.args[0];
                 float density = ctx.getResources().getDisplayMetrics().density;
-                param.setResult(26f * density); // More rounded corners
+                param.setResult(32f * density);
             }
         });
 
@@ -42,7 +41,6 @@ public class RecentsHook {
 
                 Float baseScale = lastScaleMap.get(view);
                 float from = (baseScale != null) ? baseScale : 1.0f;
-                // Soft interpolation
                 float interpolated = from + (1.0f - from) * original;
 
                 view.setScaleX(interpolated);
@@ -54,8 +52,33 @@ public class RecentsHook {
             @Override protected void beforeHookedMethod(MethodHookParam param) { param.args[0] = 0.0f; }
         });
 
+        hookSilently(lpparam.classLoader, "com.android.quickstep.views.TaskThumbnailView", "setDimAlpha", float.class, new XC_MethodHook() {
+            @Override protected void beforeHookedMethod(MethodHookParam param) { param.args[0] = 0.0f; }
+        });
+
+        hookSilently(lpparam.classLoader, "com.android.quickstep.views.TaskThumbnailView", "setDimAlphaMultipler", float.class, new XC_MethodHook() {
+            @Override protected void beforeHookedMethod(MethodHookParam param) { param.args[0] = 0.0f; }
+        });
+
+        hookSilently(lpparam.classLoader, "com.android.quickstep.views.TaskView", "setStableAlpha", float.class, new XC_MethodHook() {
+            @Override protected void beforeHookedMethod(MethodHookParam param) { param.args[0] = 1.0f; }
+        });
+
+        hookSilently(lpparam.classLoader, "com.android.quickstep.views.TaskView", "setStableAlpha", float.class, boolean.class, new XC_MethodHook() {
+            @Override protected void beforeHookedMethod(MethodHookParam param) { param.args[0] = 1.0f; }
+        });
+
+        hookSilently(lpparam.classLoader, "com.android.quickstep.views.RecentsView", "setContentAlpha", float.class, new XC_MethodHook() {
+            @Override protected void beforeHookedMethod(MethodHookParam param) { 
+                View recentsView = (View) param.thisObject;
+                recentsView.setAlpha((float) param.args[0]);
+            }
+        });
+
         hookSilently(lpparam.classLoader, "com.android.quickstep.views.TaskView", "onFinishInflate", new XC_MethodHook() {
-            @Override protected void afterHookedMethod(MethodHookParam param) { ((View) param.thisObject).setElevation(0.0f); }
+            @Override protected void afterHookedMethod(MethodHookParam param) { 
+                ((View) param.thisObject).setElevation(0.0f);
+            }
         });
 
         hookSilently(lpparam.classLoader, "com.android.quickstep.views.TaskView", "onTaskListVisibilityChanged", boolean.class, new XC_MethodHook() {
@@ -94,7 +117,8 @@ public class RecentsHook {
                 }
                 if (nativeSpacing <= 0) nativeSpacing = width;
 
-                float stackGapAhead = nativeSpacing * 0.65f;
+                float baseStackGapAhead = nativeSpacing * 0.65f;
+                float baseStackGapBehind = STACK_GAP;
                 float screenCenter = scrollX + (width / 2f);
 
                 List<View> taskViews = new ArrayList<>();
@@ -104,8 +128,8 @@ public class RecentsHook {
                         taskViews.add(v);
                     }
                 }
-                taskViews.sort((a, b) -> Float.compare(b.getLeft(), a.getLeft()));
 
+                taskViews.sort((a, b) -> Float.compare(b.getLeft(), a.getLeft()));
                 Map<View, Integer> rankMap = new HashMap<>();
                 for (int r = 0; r < taskViews.size(); r++) {
                     rankMap.put(taskViews.get(r), r);
@@ -119,32 +143,43 @@ public class RecentsHook {
                     float distanceToCenter = childCenter - screenCenter;
                     float progress = distanceToCenter / nativeSpacing;
 
+                    float fsProgress = 0f;
+                    try {
+                        fsProgress = XposedHelpers.getFloatField(child, "mFullscreenProgress");
+                    } catch (Throwable t) {}
+
+                    float currentStackGapBehind = baseStackGapBehind + ((nativeSpacing - baseStackGapBehind) * fsProgress);
+                    float currentStackGapAhead = baseStackGapAhead + ((nativeSpacing - baseStackGapAhead) * fsProgress);
+
                     if (distanceToCenter < 0) {
-                        float targetScreenPos = progress * STACK_GAP;
+                        float targetScreenPos = progress * currentStackGapBehind;
                         child.setTranslationX(targetScreenPos - distanceToCenter);
                     } else if (distanceToCenter > 0) {
-                        float targetScreenPos = progress * stackGapAhead;
+                        float targetScreenPos = progress * currentStackGapAhead;
                         child.setTranslationX(targetScreenPos - distanceToCenter);
                     } else {
                         child.setTranslationX(0f);
                     }
 
                     int rank = rankMap.getOrDefault(child, 0);
-                    float scale;
+                    float baseScale;
                     if (rank <= 3) {
-                        scale = 1.0f - (rank * 0.01f);
+                        baseScale = 1.0f - (rank * 0.01f);
                     } else {
-                        scale = 1.0f - (3 * 0.01f); // Mantener escala fija después de la 3ra tarjeta
+                        baseScale = 1.0f - (3 * 0.01f);
                     }
-                    scale = Math.max(0.70f, scale);
-                    child.setScaleX(scale);
-                    child.setScaleY(scale);
+                    baseScale = Math.max(0.70f, baseScale);
+
+                    float currentScale = baseScale + ((1.0f - baseScale) * fsProgress);
+
+                    child.setScaleX(currentScale);
+                    child.setScaleY(currentScale);
+                    
                     child.setTranslationZ(child.getLeft() * 0.01f);
 
                     try {
                         ViewGroup headerView = (ViewGroup) XposedHelpers.getObjectField(child, "mHeaderView");
                         if (headerView != null) {
-                            // Fades out much faster so only the focused card (progress ~ 0) shows the title
                             float titleAlpha = Math.max(0.0f, 1.0f - (Math.abs(progress) * 2.5f));
                             
                             headerView.setScaleX(0.85f);

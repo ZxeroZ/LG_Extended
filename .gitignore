@@ -24,4 +24,14 @@ local.properties
 *.jks
 CropImage.*
 test.java
-
+lg-Settings-descompilado
+UIDESCOMPILADO
+.agents
+settings miui descompilado
+settings miui descompilado/
+copy_hyperos_icons.py
+apply_hyperos_icons.py
+.gitignore
+resize_and_background_icons.py
+fix_namespaces.py
+.gitignore

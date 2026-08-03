@@ -133,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
         TextView kernelVersion = view.findViewById(R.id.kernelVersion);
         TextView deviceArch = view.findViewById(R.id.deviceArch);
 
-        // LSPosed detection via hook flags
         boolean hookActive = false;
         try {
             Cursor c = getContentResolver().query(
@@ -146,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
             }
         } catch (Throwable ignored) {}
 
-        // Fallback: also check other hooks
         if (!hookActive) {
             try {
                 Cursor c = getContentResolver().query(
@@ -185,6 +183,8 @@ public class MainActivity extends AppCompatActivity {
                 magiskDetail.setText("N/A");
             }
         }));
+
+
     }
 
     private void setupHooksTab(View view) {
@@ -231,38 +231,11 @@ public class MainActivity extends AppCompatActivity {
             killSettingsApp();
         });
 
-        android.widget.Switch switchAutoSortApps = view.findViewById(R.id.switchAutoSortApps);
-        boolean autoSortAppsEnabled = false;
-        try {
-            Cursor c = getContentResolver().query(
-                    ModPrefs.CONTENT_URI,
-                    new String[]{"hook_auto_sort_apps"},
-                    "boolean", new String[]{"false"}, null);
-            if (c != null && c.moveToFirst()) {
-                autoSortAppsEnabled = Boolean.parseBoolean(c.getString(0));
-                c.close();
-            }
-        } catch (Throwable ignored) {}
-
-        switchAutoSortApps.setChecked(autoSortAppsEnabled);
-
-        view.findViewById(R.id.btnAutoSortApps).setOnClickListener(v -> {
-            boolean newState = !switchAutoSortApps.isChecked();
-            switchAutoSortApps.setChecked(newState);
-            
-            ContentValues values = new ContentValues();
-            values.put("key", "hook_auto_sort_apps");
-            values.put("type", "boolean");
-            values.put("value", String.valueOf(newState));
-            getContentResolver().insert(ModPrefs.CONTENT_URI, values);
-            
-            try {
-                Runtime.getRuntime().exec(new String[]{"su", "-c", "am force-stop com.lge.launcher3"});
-                android.widget.Toast.makeText(this, "Launcher reiniciado para aplicar cambios", android.widget.Toast.LENGTH_SHORT).show();
-            } catch (Exception e) {
-                android.widget.Toast.makeText(this, "Cambios guardados. Forzar cierre de Inicio manualmente.", android.widget.Toast.LENGTH_SHORT).show();
-            }
+        view.findViewById(R.id.btnMiuiQs).setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, MiuiQsActivity.class));
         });
+
+
     }
 
     private void killSettingsApp() {
@@ -301,6 +274,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupSettingsTab(View view) {
-        // Now empty. UI moved to CustomizeSettingsActivity.
+        View btnLanguage = view.findViewById(R.id.btnLanguage);
+        TextView tvCurrentLanguage = view.findViewById(R.id.tvCurrentLanguage);
+        
+        androidx.core.os.LocaleListCompat currentLocale = androidx.appcompat.app.AppCompatDelegate.getApplicationLocales();
+        if (currentLocale.isEmpty()) {
+            tvCurrentLanguage.setText(R.string.lang_system_default);
+        } else {
+            String lang = currentLocale.get(0).getLanguage();
+            if (lang.equals("es")) {
+                tvCurrentLanguage.setText(R.string.lang_spanish);
+            } else if (lang.equals("en")) {
+                tvCurrentLanguage.setText(R.string.lang_english);
+            } else {
+                tvCurrentLanguage.setText(currentLocale.get(0).getDisplayName());
+            }
+        }
+
+        btnLanguage.setOnClickListener(v -> {
+            com.google.android.material.bottomsheet.BottomSheetDialog dialog = new com.google.android.material.bottomsheet.BottomSheetDialog(this);
+            View sheetView = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_language, null);
+            dialog.setContentView(sheetView);
+
+            sheetView.findViewById(R.id.btnLangSystem).setOnClickListener(view1 -> {
+                androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat.getEmptyLocaleList());
+                dialog.dismiss();
+            });
+
+            sheetView.findViewById(R.id.btnLangEnglish).setOnClickListener(view1 -> {
+                androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat.forLanguageTags("en"));
+                dialog.dismiss();
+            });
+
+            sheetView.findViewById(R.id.btnLangSpanish).setOnClickListener(view1 -> {
+                androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat.forLanguageTags("es"));
+                dialog.dismiss();
+            });
+
+            dialog.show();
+        });
     }
 }

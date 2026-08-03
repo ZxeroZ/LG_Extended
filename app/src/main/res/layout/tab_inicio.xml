@@ -70,7 +70,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Model"
+                    android:text="@string/info_model"
                     android:textColor="@color/color_text_secondary"
                     android:textSize="14sp" />
 
@@ -94,7 +94,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Android"
+                    android:text="@string/info_android"
                     android:textColor="@color/color_text_secondary"
                     android:textSize="14sp" />
 
@@ -118,7 +118,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Kernel"
+                    android:text="@string/info_kernel"
                     android:textColor="@color/color_text_secondary"
                     android:textSize="14sp" />
 
@@ -144,7 +144,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Arch"
+                    android:text="@string/info_arch"
                     android:textColor="@color/color_text_secondary"
                     android:textSize="14sp" />
 
@@ -190,7 +190,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="LSPosed"
+                    android:text="@string/info_lsposed"
                     android:textColor="@color/color_text_primary"
                     android:textSize="15sp" />
 
@@ -219,7 +219,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Root"
+                    android:text="@string/info_root"
                     android:textColor="@color/color_text_primary"
                     android:textSize="15sp" />
 
@@ -299,6 +299,8 @@
                 android:textColor="@color/color_text_secondary"
                 android:textSize="13sp" />
         </LinearLayout>
+
+
 
         <Space
             android:layout_width="match_parent"

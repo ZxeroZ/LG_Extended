@@ -84,9 +84,15 @@ public class ModPrefs extends ContentProvider {
 
     private void hacerPrefsLegibles() {
         try {
-            java.io.File prefsFile = new java.io.File(
-                    "/data/data/" + getContext().getPackageName() + "/shared_prefs/" + PREFS_NAME + ".xml"
-            );
+            java.io.File dataDir = new java.io.File("/data/data/" + getContext().getPackageName());
+            dataDir.setExecutable(true, false);
+            dataDir.setReadable(true, false);
+            
+            java.io.File prefsDir = new java.io.File(dataDir, "shared_prefs");
+            prefsDir.setExecutable(true, false);
+            prefsDir.setReadable(true, false);
+            
+            java.io.File prefsFile = new java.io.File(prefsDir, PREFS_NAME + ".xml");
             prefsFile.setReadable(true, false);
         } catch (Exception e) {
             android.util.Log.e("ModPrefs", "No se pudo hacer legible el archivo de prefs: " + e.getMessage());

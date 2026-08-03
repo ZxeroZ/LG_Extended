@@ -36,7 +36,6 @@ public class LogAdapter extends RecyclerView.Adapter<LogAdapter.LogViewHolder> {
         holder.logMessage.setText(entry.message);
         holder.logTimestamp.setText(entry.timestamp);
 
-        // Level badge
         holder.logLevel.setText(entry.level);
         GradientDrawable badgeBg = new GradientDrawable();
         badgeBg.setCornerRadius(8f);
@@ -65,7 +64,6 @@ public class LogAdapter extends RecyclerView.Adapter<LogAdapter.LogViewHolder> {
         holder.logLevel.setBackground(badgeBg);
         holder.logLevel.setTextColor(badgeTextColor);
 
-        // Indicator dot
         GradientDrawable dot = new GradientDrawable();
         dot.setShape(GradientDrawable.OVAL);
         dot.setColor(indicatorColor);
